@@ -1,34 +1,20 @@
-## 🔗 Live Website
-
-[https://maxwellhandler.com](https://maxwellhandler.com)
-
 ### Overview
 
 >Please note I’m currently updating my website to better showcase my experience and skills — feel free to reach out in the meantime
 
->View the page at 
+>View the page at [https://maxwellhandler.com](https://maxwellhandler.com)
 
 ### Table of Contents
 
 - [Saleforce SLDS Website](#saleforce-slds-website)
     + [Overview](#overview)
-    + [Design](#design)
     + [Prerequisites](#prerequisites)
-    + [Contents](#contents)
+    + [Project Structure](#Project-Structure)
     + [Installing / Forking](#installing---forking)
     + [How To](#how-to)
-    + [Notes](#Contributing)
     + [Contributing](#contributing)
     + [License](#license)
     + [Contact](#contact)
-
-
-
-### Design
-
-Main Page
-![Image of Home](https://github.com/mhandler1991/Salesforce-Website/blob/master/assets/images/readme/Homepage_v2.png?raw=true)
-
 
 
 ### Prerequisites
