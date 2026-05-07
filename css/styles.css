@@ -1162,3 +1162,96 @@ section[id],
   opacity: 0.75;
   font-size: 0.82rem;
 }
+
+/* Pipeline stepper (used on /ai/) */
+.pipeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+  counter-reset: pipeline;
+}
+
+@media (min-width: 720px) {
+  .pipeline {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.1rem;
+  }
+}
+
+.pipeline-step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1.4rem 1.25rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  counter-increment: pipeline;
+}
+
+.pipeline-step::before {
+  content: "0" counter(pipeline);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  opacity: 0.7;
+}
+
+.pipeline-step h3 {
+  margin: 0;
+  font-size: 1rem;
+  letter-spacing: -0.01em;
+}
+
+.pipeline-step p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+.pipeline-step code {
+  font-size: 0.82em;
+  padding: 0.05rem 0.32rem;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.pipeline-step-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  margin-bottom: 0.15rem;
+  border-radius: var(--radius-sm);
+  font-size: 1.05rem;
+  background: linear-gradient(135deg, var(--accent-soft), var(--accent-2-soft));
+  color: var(--accent);
+}
+
+@media (min-width: 720px) {
+  .pipeline-step:not(:last-child)::after {
+    content: "›";
+    position: absolute;
+    right: -1.1rem;
+    top: 50%;
+    width: 1.1rem;
+    transform: translate(50%, -50%);
+    text-align: center;
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    line-height: 1;
+    color: var(--accent);
+    opacity: 0.55;
+    pointer-events: none;
+  }
+}

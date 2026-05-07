@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#0c0f14">
+    <meta name="description" content="Maxwell Handler's AI Lab — how this site is built with AI-assisted workflows, the tools in daily rotation, and what's shipping next.">
+    <title>AI Lab · Maxwell Handler</title>
+    <link rel="canonical" href="https://maxwellhandler.com/ai/">
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://maxwellhandler.com/ai/">
+    <meta property="og:title" content="AI Lab · Maxwell Handler">
+    <meta property="og:description" content="How this portfolio is built with AI-assisted workflows — the tools in daily rotation, what's on the radar, and the meta-experiment of shipping changes through Claude, Nimbalyst, and Cursor.">
+    <meta property="og:image" content="https://maxwellhandler.com/assets/profile.jpg">
+    <meta property="og:image:alt" content="Portrait of Maxwell Handler">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:url" content="https://maxwellhandler.com/ai/">
+    <meta name="twitter:title" content="AI Lab · Maxwell Handler">
+    <meta name="twitter:description" content="How this portfolio is built with AI-assisted workflows — the tools in daily rotation, what's on the radar, and the meta-experiment of shipping changes through Claude, Nimbalyst, and Cursor.">
+    <meta name="twitter:image" content="https://maxwellhandler.com/assets/profile.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&display=swap" rel="stylesheet">
+    <link href="/css/styles.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="noise" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="logo" href="/">MH</a>
+        <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+          <span class="sr-only">Menu</span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+        <nav id="site-nav" class="site-nav" aria-label="Primary">
+          <a href="/#about">About</a>
+          <a href="/#pillars">What I do</a>
+          <a href="/#experience">Experience</a>
+          <a href="/#skills">Skills</a>
+          <a href="/#credentials">Credentials</a>
+          <a href="/ai/" class="nav-cta" aria-current="page">AI Lab</a>
+          <a href="/#contact" class="nav-cta">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-bg" aria-hidden="true">
+          <div class="blob blob-a"></div>
+          <div class="blob blob-b"></div>
+          <div class="blob blob-c"></div>
+        </div>
+        <div class="container hero-inner">
+          <p class="hero-kicker">AI · Tooling · Workflow</p>
+          <h1 class="hero-title">
+            AI is in my <span class="accent">workflow</span>, not just my vocabulary.
+          </h1>
+          <p class="hero-lead">
+            I push my comfort zone every week — running real product work through agentic editors, model-driven planning, and code I review but don't always type. This page is the meta: what I use, how I use it, and what's shipping next.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#how-built">See how it's built</a>
+            <a class="btn btn-ghost" href="/">&larr; Back to home</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="how-built" class="section section-pillars">
+        <div class="container">
+          <div class="section-head">
+            <h2 class="section-title">How this site was built</h2>
+            <p class="section-sub">Static HTML, CSS, and JS — but the path from idea to deploy runs through an AI-native stack. Each step does one thing well.</p>
+          </div>
+          <ol class="pipeline">
+            <li class="pipeline-step">
+              <span class="pipeline-step-icon" aria-hidden="true">◐</span>
+              <h3>Nimbalyst + Cursor</h3>
+              <p>Editor where I write, sketch, and prompt. Nimbalyst sessions plan the work; Cursor's edits land in real files.</p>
+            </li>
+            <li class="pipeline-step">
+              <span class="pipeline-step-icon" aria-hidden="true">✦</span>
+              <h3>Claude</h3>
+              <p>Reviewer, refactorer, and designer-in-residence. Reads the codebase and writes changes I sign off on.</p>
+            </li>
+            <li class="pipeline-step">
+              <span class="pipeline-step-icon" aria-hidden="true">◇</span>
+              <h3>GitHub</h3>
+              <p>Source of truth. <code>stage</code> for previews, <code>main</code> for prod. The diff is the contract.</p>
+            </li>
+            <li class="pipeline-step">
+              <span class="pipeline-step-icon" aria-hidden="true">◢</span>
+              <h3>Netlify (stage)</h3>
+              <p>Auto-deploys preview URLs from <code>stage</code>. Quick visual QA before promotion.</p>
+            </li>
+            <li class="pipeline-step">
+              <span class="pipeline-step-icon" aria-hidden="true">◆</span>
+              <h3>GitHub Pages (prod)</h3>
+              <p>Public site at <code>maxwellhandler.com</code>. Static, fast, and boring on purpose.</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section id="tools" class="section section-skills">
+        <div class="container">
+          <div class="section-head">
+            <h2 class="section-title">AI tools I use</h2>
+            <p class="section-sub">A working toolkit, not a wishlist. The "exploring" and "on the radar" columns shift quarter to quarter.</p>
+          </div>
+          <div class="skill-groups">
+            <div class="skill-group">
+              <h3>Daily driver</h3>
+              <ul class="skill-chips">
+                <li>Claude</li>
+                <li>Claude Code</li>
+                <li>Cursor</li>
+                <li>Nimbalyst</li>
+                <li>GitHub Copilot</li>
+              </ul>
+            </div>
+            <div class="skill-group">
+              <h3>Exploring</h3>
+              <ul class="skill-chips">
+                <li>Brave Search API</li>
+                <li>Notion AI</li>
+                <li>ChatGPT (research)</li>
+                <li>Gemini (long-context)</li>
+              </ul>
+            </div>
+            <div class="skill-group">
+              <h3>On the radar</h3>
+              <ul class="skill-chips">
+                <li>MCP server building</li>
+                <li>Agentic eval frameworks</li>
+                <li>Vibe-coded ETL</li>
+                <li>Local model orchestration</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="iteration-log" class="section section-timeline">
+        <div class="container">
+          <div class="section-head">
+            <h2 class="section-title">Iteration log</h2>
+            <p class="section-sub">Append-only history of what's changed on the site, and what came out of each pass through the loop.</p>
+          </div>
+          <ol class="timeline">
+            <li class="timeline-item">
+              <span class="timeline-dot"></span>
+              <div class="timeline-body">
+                <p class="timeline-meta">May 2026</p>
+                <h3>AI Lab page launch</h3>
+                <ul class="timeline-bullets">
+                  <li>Standalone page at <code>/ai/</code> describing the AI-assisted build pipeline, daily-driver tools, and what's coming in V2.</li>
+                  <li>Planned in a Nimbalyst session, drafted by Claude, reviewed and shipped through the <code>stage → main</code> flow.</li>
+                </ul>
+              </div>
+            </li>
+            <li class="timeline-item">
+              <span class="timeline-dot"></span>
+              <div class="timeline-body">
+                <p class="timeline-meta">May 2026</p>
+                <h3>OG / Twitter meta + favicon move</h3>
+                <ul class="timeline-bullets">
+                  <li>Added social-card metadata and canonical link tags so shares to LinkedIn and Slack render the right title, description, and image.</li>
+                  <li>Moved the favicon into <code>/assets/</code> and tightened CSS / JS housekeeping along the way.</li>
+                </ul>
+              </div>
+            </li>
+            <li class="timeline-item">
+              <span class="timeline-dot"></span>
+              <div class="timeline-body">
+                <p class="timeline-meta">May 2026</p>
+                <h3>Site refresh — vanilla HTML / CSS / JS rewrite</h3>
+                <ul class="timeline-bullets">
+                  <li>Tore down the framework version and rebuilt from primitives. Single page, sticky header, animated timeline, marquee chips.</li>
+                  <li>Result: faster, cheaper, easier for an AI agent (or me at midnight) to reason about end-to-end.</li>
+                </ul>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section id="whats-next" class="section section-pillars">
+        <div class="container">
+          <div class="section-head">
+            <h2 class="section-title">What's next: competitor-intel agent</h2>
+            <p class="section-sub">A small autonomous loop that watches the lending-platform space and proposes site updates when the narrative shifts.</p>
+          </div>
+          <article class="pillar-card pillar-card-pm">
+            <span class="pillar-icon" aria-hidden="true">◐</span>
+            <h3>In progress · V2</h3>
+            <p>
+              <strong>Brave Search</strong> pulls fresh signals on competitor moves and category language &rarr; <strong>Claude</strong> distills what changed and why it matters &rarr; <strong>Claude Code</strong> drafts targeted edits to this site (positioning, skill chips, iteration-log entries) &rarr; I review and merge. Goal: a portfolio that updates itself when the market does, with a human in the loop on every commit.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" class="section section-contact">
+        <div class="container contact-inner">
+          <h2 class="section-title">Want to compare notes?</h2>
+          <p class="contact-lead">
+            Building with AI inside a regulated org, exploring agentic workflows, or just want to swap tooling stacks — happy to talk shop.
+          </p>
+          <div class="hero-actions contact-actions">
+            <a class="btn btn-primary" href="mailto:mhandler1991@gmail.com">mhandler1991@gmail.com</a>
+            <a class="btn btn-ghost" href="/">&larr; Back to home</a>
+          </div>
+          <p class="contact-location">San Diego, CA</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© <span id="year"></span> Maxwell Handler · San Diego, CA</p>
+        <p class="footer-note">Built as a static site — fast, accessible, easy to evolve.</p>
+      </div>
+    </footer>
+
+    <script src="/js/scripts.js" defer></script>
+  </body>
+</html>
