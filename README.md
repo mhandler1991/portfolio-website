@@ -67,4 +67,8 @@ Workflow: push to `stage` → preview on Netlify → merge `stage` → `main` to
 
 ## Contact
 
-mhandler1991@gmail.com**Maxwell**** Handler** — [mailto:mhandler1991@gmail.com](./mailto:mhandler1991@gmail.com) · [LinkedIn](https://www.linkedin.com/in/handler1991/)
+**Maxwell Handler**
+
+- ✉️ Email: [mhandler1991@gmail.com](mailto:mhandler1991@gmail.com)
+- 💼 LinkedIn: [linkedin.com/in/handler1991](https://www.linkedin.com/in/handler1991/)
+- 🌐 Web: [maxwellhandler.com](https://maxwellhandler.com)
