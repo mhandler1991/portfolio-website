@@ -234,7 +234,6 @@ section[id],
       max(1.25rem, env(safe-area-inset-left, 0));
     max-height: min(72vh, calc(100dvh - 5.25rem - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px)));
     overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
     background: rgba(12, 15, 20, 0.96);
     border-bottom: 1px solid var(--border);
     box-shadow: 0 24px 48px rgba(0, 0, 0, 0.35);
@@ -431,6 +430,13 @@ section[id],
   overflow: hidden;
   width: 100%;
   min-width: 0;
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 10px,
+    #000 calc(100% - 10px),
+    transparent
+  );
   mask-image: linear-gradient(
     90deg,
     transparent,
@@ -444,8 +450,8 @@ section[id],
   overflow-x: auto;
   overflow-y: hidden;
   overscroll-behavior-x: contain;
-  -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
+  -webkit-mask-image: none;
   mask-image: none;
 }
 
