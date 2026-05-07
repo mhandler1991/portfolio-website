@@ -184,6 +184,84 @@ section[id],
   border-color: rgba(94, 225, 212, 0.45) !important;
 }
 
+.nav-cta-primary {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background: linear-gradient(115deg, var(--accent), var(--accent-2), var(--accent)) !important;
+  background-size: 220% 220% !important;
+  color: var(--bg-deep) !important;
+  border-color: transparent !important;
+  font-weight: 600;
+  box-shadow: 0 6px 20px rgba(94, 225, 212, 0.28), 0 6px 20px rgba(199, 155, 255, 0.18);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+  animation: nav-cta-gradient 9s ease-in-out infinite;
+}
+
+.nav-cta-primary::before {
+  content: "✦";
+  display: inline-block;
+  margin-right: 0.4rem;
+  font-size: 0.85em;
+  line-height: 1;
+  color: var(--bg-deep);
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.55);
+  animation: nav-cta-sparkle 2.8s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.nav-cta-primary::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(115deg, transparent 0%, rgba(255, 255, 255, 0.55) 50%, transparent 100%);
+  transform: skewX(-20deg);
+  pointer-events: none;
+  transition: left 0.75s ease;
+  z-index: 1;
+}
+
+.nav-cta-primary:hover {
+  transform: translateY(-1px) scale(1.045);
+  filter: brightness(1.08);
+  border-color: transparent !important;
+  box-shadow: 0 12px 30px rgba(94, 225, 212, 0.42), 0 12px 30px rgba(199, 155, 255, 0.32);
+}
+
+.nav-cta-primary:hover::after {
+  left: 150%;
+}
+
+.nav-cta-primary:hover::before {
+  animation-duration: 1.4s;
+}
+
+@keyframes nav-cta-gradient {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes nav-cta-sparkle {
+  0%, 100% { opacity: 0.55; transform: scale(0.85) rotate(0deg); }
+  50% { opacity: 1; transform: scale(1.15) rotate(18deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-cta-primary,
+  .nav-cta-primary::before,
+  .nav-cta-primary::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .nav-cta-primary:hover::after {
+    left: -120%;
+  }
+}
+
 .nav-toggle {
   display: none;
   flex-direction: column;
@@ -1161,4 +1239,97 @@ section[id],
 .footer-note {
   opacity: 0.75;
   font-size: 0.82rem;
+}
+
+/* Pipeline stepper (used on /ai/) */
+.pipeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+  counter-reset: pipeline;
+}
+
+@media (min-width: 720px) {
+  .pipeline {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.1rem;
+  }
+}
+
+.pipeline-step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1.4rem 1.25rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  counter-increment: pipeline;
+}
+
+.pipeline-step::before {
+  content: "0" counter(pipeline);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  opacity: 0.7;
+}
+
+.pipeline-step h3 {
+  margin: 0;
+  font-size: 1rem;
+  letter-spacing: -0.01em;
+}
+
+.pipeline-step p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+.pipeline-step code {
+  font-size: 0.82em;
+  padding: 0.05rem 0.32rem;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.pipeline-step-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  margin-bottom: 0.15rem;
+  border-radius: var(--radius-sm);
+  font-size: 1.05rem;
+  background: linear-gradient(135deg, var(--accent-soft), var(--accent-2-soft));
+  color: var(--accent);
+}
+
+@media (min-width: 720px) {
+  .pipeline-step:not(:last-child)::after {
+    content: "›";
+    position: absolute;
+    right: -1.1rem;
+    top: 50%;
+    width: 1.1rem;
+    transform: translateY(-50%);
+    text-align: center;
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    line-height: 1;
+    color: var(--accent);
+    opacity: 0.55;
+    pointer-events: none;
+  }
 }

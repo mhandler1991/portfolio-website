@@ -29,19 +29,9 @@ Personal portfolio site for **Maxwell Handler** — Senior Technical Product Man
 └── README.md
 ```
 
-## Local preview
+## Preview
 
-No build step. Serve the folder with any static server:
-
-```bash
-# Python 3
-python -m http.server 8000
-
-# Node
-npx serve .
-```
-
-Then open <http://127.0.0.1:8000/>.
+No build step, no local server needed. Push to `stage` and preview on Netlify: <https://maxwellhandler.netlify.app/>.
 
 ## Deployment
 
