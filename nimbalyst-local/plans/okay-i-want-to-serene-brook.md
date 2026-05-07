@@ -92,15 +92,14 @@ Token reuse — no new design tokens added. Honors `prefers-reduced-motion` (no 
 
 ## Verification
 
-1. Restart the local PowerShell static server: `powershell -NoProfile -ExecutionPolicy Bypass -File "$env:TEMP\nimbalyst-static-server.ps1" -Root "C:\Users\mhand\Documents\Documents\Website\portfolio-website" -Port 8000`
-2. **Home → AI Lab nav**: open `http://127.0.0.1:8000/`, click the new "AI Lab" CTA, confirm `/ai/` loads with full styling.
+1. **Deploy preview**: push branch `stage` → Netlify auto-builds at <https://maxwellhandler.netlify.app/>.
+2. **Home → AI Lab nav**: open `maxwellhandler.netlify.app`, click the new "AI Lab" CTA, confirm `/ai/` loads with full styling.
 3. **AI Lab → Home nav**: from `/ai/` click each section link (About / What I do / Experience / Skills / Credentials / Contact) — confirm they navigate to `/` and scroll-snap to the right section.
 4. **Mobile nav**: resize to <768px on both pages, open the hamburger, click links, confirm it closes and navigates correctly.
 5. **Reduced motion**: toggle OS-level reduced-motion setting, reload `/ai/`, confirm hero blobs are static (existing CSS rule already handles this).
 6. **Asset paths**: verify in DevTools Network tab that `/css/styles.css`, `/js/scripts.js`, `/assets/favicon.svg`, and `/assets/profile.jpg` all return 200 from `/ai/`.
-7. **Meta tags**: `curl -s http://127.0.0.1:8000/ai/ | grep -E "(og:|twitter:|canonical)"` — confirm 11 lines (canonical + 6 OG + 4 Twitter).
+7. **Meta tags**: view-source on `maxwellhandler.netlify.app/ai/` and confirm canonical + OG + Twitter Card tags are present.
 8. **Visual diff**: `mcp__nimbalyst-mcp__capture_editor_screenshot` on `ai/index.html` to confirm rendered layout before requesting commit.
-9. **Deploy preview**: push branch `stage` → confirm Netlify preview at `maxwellhandler.netlify.app/ai/` renders identically.
 
 ---
 
