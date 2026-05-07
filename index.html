@@ -1,82 +1,313 @@
 <!doctype html>
-<html lang="en" data-bs-theme="dark">
+<html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Portfolio</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="cover.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/scripts.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#0c0f14">
+    <meta name="description" content="Maxwell Handler — Senior Technical Product Manager in fintech platforms ($750M+ lending portfolio). Salesforce Application Architect and full-stack developer, San Diego.">
+    <title>Maxwell Handler · Senior Technical PM · Fintech &amp; Platforms</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&display=swap" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
   </head>
-  <body class="d-flex flex-column min-vh-100 text-bg-dark">
+  <body>
+    <div class="noise" aria-hidden="true"></div>
 
-    <!-- Alert Section -->
-  <div class="alert alert-dark text-center" role="alert" >
-    I’m currently updating my website to better showcase my experience and skills — feel free to reach out in the meantime!
-  </div>
-  
-
-    <!-- <header class="p-3">
-      <div class="container d-flex justify-content-between align-items-center">
-        <h3 class="mb-0">Your Name</h3>
-        <nav class="nav nav-masthead">
-          <a class="nav-link active" href="#">Home</a>
-          <a class="nav-link" href="#contact">Contact</a>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="logo" href="#top">MH</a>
+        <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+          <span class="sr-only">Menu</span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+        <nav id="site-nav" class="site-nav" aria-label="Primary">
+          <a href="#about">About</a>
+          <a href="#pillars">What I do</a>
+          <a href="#experience">Experience</a>
+          <a href="#skills">Skills</a>
+          <a href="#credentials">Credentials</a>
+          <a href="#contact" class="nav-cta">Contact</a>
         </nav>
       </div>
-    </header> -->
+    </header>
 
-    <main class="flex-fill d-flex flex-column justify-content-center align-items-center text-center px-3" style="padding-top: 50px;">
-      <h1>Hello, I'm Max!</h1>
-      <br>
+    <main id="top">
+      <section class="hero">
+        <div class="hero-bg" aria-hidden="true">
+          <div class="blob blob-a"></div>
+          <div class="blob blob-b"></div>
+          <div class="blob blob-c"></div>
+        </div>
+        <div class="container hero-inner">
+          <p class="hero-kicker">Product · Architecture · Salesforce · Fintech platforms</p>
+          <h1 class="hero-title">
+            Hi, I’m <span class="accent">Max</span>. I lead technical product teams for fintech—where platforms, APIs, and customer experience have to line up.
+          </h1>
+          <p class="hero-lead">
+            Senior Technical Product Manager building fintech lending platforms at the intersection of strategy, systems, and code.
+          </p>
+          <div class="hero-tags-shell" id="hero-tags-shell">
+            <div class="hero-tags-viewport">
+              <div class="hero-tags-track" id="hero-tags-track">
+                <div class="hero-tags-group">
+                  <ul class="hero-tags" aria-label="Focus areas">
+                    <li>User &amp; Partner Portals</li>
+                    <li>Underwriting &amp; Decisioning</li>
+                    <li>Partner &amp; System APIs</li>
+                    <li>Salesforce Architecture</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://www.linkedin.com/in/handler1991/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a class="btn btn-ghost" href="https://docs.google.com/document/d/e/2PACX-1vSrySJOaq8SuYeRH-K_3uF4G3KK_gRlw0_6EuYZO0PegL6YQ7afXb8db5gmuZ7FHSu0zb8z-pK59tql/pub" target="_blank" rel="noopener noreferrer">Resume</a>
+            <a class="btn btn-ghost" href="mailto:mhandler1991@gmail.com">Email me</a>
+          </div>
+          <div class="hero-profile" id="hero-profile">
+            <span class="hero-photo-fallback" aria-hidden="true">MH</span>
+            <img src="assets/profile.jpg" alt="Portrait of Maxwell Handler" width="200" height="200" loading="eager" class="hero-photo" id="hero-photo">
+          </div>
+        </div>
+      </section>
 
-      <div class="mb-4">
-        <img src="assets/profile.jpg" alt="Max" class="rounded-circle img-thumbnail" style="width: 200px; height: 200px; object-fit: cover;">
-      </div>
-      
+      <section id="about" class="section section-about">
+        <div class="container narrow">
+          <h2 class="section-title">How I work</h2>
+          <p class="large-text">
+            I’m comfortable leading when the path isn’t obvious—framing ambiguity into priorities, tradeoffs, and a plan the org can execute.
+            I run cross-functional programs across <strong>marketing, sales, operations, legal, and customer service</strong>, aligning incentives so delivery isn’t a handoff marathon.
+            I challenge the status quo when “how we’ve always done it” gets in the way of customers, risk posture, or velocity—but I do it with evidence and respect for the constraints.
+          </p>
+          <p class="large-text">
+            I’m strongest where <strong>product strategy meets technical execution</strong>: the narrative has to match what engineering can ship, and what compliance and ops can run.
+            I’ve grown from hands-on technical architecture into owning roadmaps for <strong>APIs, portals, and data partnerships</strong> that create material impact—conversion, throughput, portfolio performance, and how the company actually operates day to day.
+          </p>
+          <p class="large-text">
+            <strong>I ship changes, not slides.</strong> My bias is toward launches, learning in production, and systems teams trust when the edge cases show up.
+          </p>
+        </div>
+      </section>
 
-      <p class="lead">
-        I am a Technical Product Leader with 10+ years of experience, specializing in CRM, SaaS, and API solutions. Known for bridging technical and business teams to deliver scalable, user-centric products that drive growth and solve real-world problems. I’m passionate about bridging technology and business to turn big ideas into real results.
-      </p>
-      <p></p>
-      <br>
-      <p class="lead">
-        <!-- <a href="https://www.linkedin.com/in/handler1991/" target="_blank" class="btn btn-lg btn-light fw-bold border-white bg-white me-2">LinkedIn</a> -->
-        <a href="https://www.linkedin.com/in/handler1991/" target="_blank" class="btn btn-lg btn-outline-light fw-bold me-2">LinkedIn</a>
-        <a href="https://docs.google.com/document/d/e/2PACX-1vQ_alIloCaEYm5FvhKtH4uOp4t9ZTUL4khT8kWXzmi0UJ2URNcOgJTZZRDXnxvrr18hRqq4JM4c_44N/pub" target="_blank" class="btn btn-lg btn-outline-light fw-bold me-2">View Resume</a>
-        <!-- <a href="#contact" class="btn btn-lg btn-outline-light fw-bold">Contact Me</a> -->
-      </p>
+      <section id="pillars" class="section section-pillars">
+        <div class="container">
+          <div class="section-head">
+            <h2 class="section-title">Three lenses, one owner</h2>
+            <p class="section-sub">Growing through product, engineering, and Salesforce gives me perspectives—and helps me spot opportunities—that are easy to miss from a single lane.</p>
+          </div>
+          <div class="pillar-grid">
+            <article class="pillar-card pillar-card-pm">
+              <span class="pillar-icon" aria-hidden="true">◇</span>
+              <h3>Technical product leadership</h3>
+              <p>Owned strategy for lending platforms, merchant experiences, and broker channels tied to conversion, processing time, and portfolio performance—partnering across eng, design, data science, risk, and ops.</p>
+            </article>
+            <article class="pillar-card pillar-card-dev">
+              <span class="pillar-icon" aria-hidden="true">⌘</span>
+              <h3>Platforms &amp; integrations</h3>
+              <p>Partner APIs for real-time loan intake, Plaid-powered bank data for onboarding and renewals, SQL-backed funnel analysis—and comfort debating schema, SLAs, and rollback plans with engineering.</p>
+            </article>
+            <article class="pillar-card pillar-card-sfdc">
+              <span class="pillar-icon" aria-hidden="true">☁</span>
+              <h3>Salesforce &amp; CRM scale</h3>
+              <p>Governed multi-org Salesforce footprints, CI/CD with GitHub and Gearset, security and sharing models—Application Architect certified, with Apex, LWC, and operational discipline.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="experience" class="section section-timeline">
+        <div class="container">
+          <div class="section-head">
+            <h2 class="section-title">Experience</h2>
+          </div>
+          <ol class="timeline">
+            <li class="timeline-item">
+              <span class="timeline-dot"></span>
+              <div class="timeline-body">
+                <p class="timeline-meta">National Funding · Apr 2024 – Present</p>
+                <h3>Manager, Technical Product Management</h3>
+                <ul class="timeline-bullets">
+                  <li>Own product strategy for core lending and customer experience platforms supporting a <strong>$750M+</strong> portfolio across product, engineering, design, QA, risk, and ops.</li>
+                  <li>Drive API roadmap execution to improve underwriting throughput and operational efficiency; define KPIs and OKRs with executives tied to conversion, processing time, and portfolio outcomes.</li>
+                  <li>Relaunch broker acquisition—strategy for broker onboarding and merchant experience—and redesign credit decisioning infrastructure for scalable growth within loss constraints.</li>
+                  <li>Lead initiatives using Plaid bank data and behavioral signals for renewal targeting, re-engagement, and risk segmentation.</li>
+                </ul>
+              </div>
+            </li>
+            <li class="timeline-item">
+              <span class="timeline-dot"></span>
+              <div class="timeline-body">
+                <p class="timeline-meta">National Funding · Jan 2023 – Mar 2024</p>
+                <h3>Principal Technical Product Manager</h3>
+                <ul class="timeline-bullets">
+                  <li>Delivered external <strong>Partner API</strong> for real-time loan intake and data exchange—improving integration throughput and partner onboarding speed.</li>
+                  <li>Owned roadmap for consumer-facing <strong>merchant portal</strong>; adoption reached <strong>100%</strong> and cut end-to-end time to funding by <strong>50%</strong>.</li>
+                  <li>Partnered with underwriting, data science, and analytics on credit evaluation workflows; shipped improvements that reduced underwriting manual processing time by <strong>20%</strong>.</li>
+                </ul>
+              </div>
+            </li>
+            <li class="timeline-item">
+              <span class="timeline-dot"></span>
+              <div class="timeline-body">
+                <p class="timeline-meta">National Funding · Jul 2021 – Dec 2022</p>
+                <h3>Technical Product Manager</h3>
+                <ul class="timeline-bullets">
+                  <li>Led <strong>Plaid</strong> integration for real-time bank data in onboarding—better conversion, fraud signals, and identity verification; helped lift application-to-funding conversion by <strong>25%</strong>.</li>
+                  <li>Governed and optimized <strong>three Salesforce orgs</strong>: architecture alignment, data strategy, scalability, and continuity via governance and environment management.</li>
+                  <li>Prioritized sales-technology initiatives across business units with security, compliance, and engineering.</li>
+                </ul>
+              </div>
+            </li>
+            <li class="timeline-item">
+              <span class="timeline-dot"></span>
+              <div class="timeline-body">
+                <p class="timeline-meta">National Funding · Mar 2019 – Jun 2021</p>
+                <h3>Senior Salesforce Administrator</h3>
+                <ul class="timeline-bullets">
+                  <li>Designed scalable Salesforce architecture and documentation standards to reduce long-term technical debt.</li>
+                  <li>Built CI/CD with <strong>GitHub</strong> and <strong>Gearset</strong>; cut deployment errors by <strong>40%</strong> and improved release reliability.</li>
+                  <li>Translated business requirements into technical designs and shipped CRM enhancements aligned to platform best practices.</li>
+                </ul>
+              </div>
+            </li>
+            <li class="timeline-item">
+              <span class="timeline-dot"></span>
+              <div class="timeline-body">
+                <p class="timeline-meta">Ambry Genetics · Aliso Viejo, CA · Apr 2018 – Feb 2019</p>
+                <h3>Salesforce Administrator</h3>
+                <ul class="timeline-bullets">
+                  <li>Administration for <strong>250+</strong> users across Sales and Service Cloud with strong uptime and process alignment.</li>
+                  <li>Bi-directional integrations between Salesforce and databases for reporting accuracy.</li>
+                  <li>Championed <strong>HIPAA</strong>-aligned data practices alongside growth.</li>
+                </ul>
+              </div>
+            </li>
+            <li class="timeline-item">
+              <span class="timeline-dot"></span>
+              <div class="timeline-body">
+                <p class="timeline-meta">Ceridian · Virtual · Oct 2016 – Apr 2018</p>
+                <h3>Senior Business Analyst</h3>
+                <ul class="timeline-bullets">
+                  <li>Delivered Lightning and Salesforce1 solutions for mobile-first field teams.</li>
+                  <li>Primary liaison across <strong>45</strong> departments—requirements through technical delivery.</li>
+                </ul>
+              </div>
+            </li>
+            <li class="timeline-item">
+              <span class="timeline-dot"></span>
+              <div class="timeline-body">
+                <p class="timeline-meta">Clarus Designs · San Francisco, CA · Aug 2015 – Sep 2016</p>
+                <h3>Sales and Operations Analyst</h3>
+                <ul class="timeline-bullets">
+                  <li>Consulted with early-stage teams on operations, process design, and scalable technology adoption.</li>
+                </ul>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section id="skills" class="section section-skills">
+        <div class="container">
+          <div class="section-head">
+            <h2 class="section-title">Toolkit</h2>
+            <p class="section-sub">Product leadership backed by architecture, data, and shipping discipline.</p>
+          </div>
+          <div class="skill-groups">
+            <div class="skill-group">
+              <h3>Product</h3>
+              <ul class="skill-chips">
+                <li>Roadmapping &amp; OKRs</li>
+                <li>Experimentation / A/B testing</li>
+                <li>Funnel optimization</li>
+                <li>Executive communication</li>
+                <li>Cross-functional leadership</li>
+              </ul>
+            </div>
+            <div class="skill-group">
+              <h3>Architecture &amp; engineering</h3>
+              <ul class="skill-chips">
+                <li>APIs &amp; microservices</li>
+                <li>HTML, CSS, JavaScript</li>
+                <li>Node.js</li>
+                <li>SQL</li>
+                <li>AWS</li>
+                <li>GitHub</li>
+              </ul>
+            </div>
+            <div class="skill-group">
+              <h3>CRM &amp; platforms</h3>
+              <ul class="skill-chips">
+                <li>Salesforce (Sales, Service, Marketing Cloud)</li>
+                <li>Apex, SOQL &amp; SOSL</li>
+                <li>LWC</li>
+                <li>Flows &amp; automation</li>
+                <li>Gearset CI/CD</li>
+                <li>HubSpot</li>
+                <li>Plaid</li>
+                <li>Twilio</li>
+              </ul>
+            </div>
+          </div>
+
+          <div id="credentials" class="credentials-block">
+            <h3 class="credentials-title">Credentials &amp; education</h3>
+            <div class="credentials-grid">
+              <div class="credentials-column">
+                <h4 class="credentials-heading">Salesforce</h4>
+                <ul class="credentials-list">
+                  <li>Application Architect</li>
+                  <li>Data Architecture &amp; Management Designer</li>
+                  <li>Sharing &amp; Visibility Designer</li>
+                  <li>Salesforce Developer I</li>
+                  <li>Platform App Builder</li>
+                  <li>Administrator</li>
+                </ul>
+                <h4 class="credentials-heading">Product</h4>
+                <ul class="credentials-list">
+                  <li>Certified Scrum Product Owner (CSPO)</li>
+                </ul>
+              </div>
+              <div class="credentials-column">
+                <h4 class="credentials-heading">Education</h4>
+                <ul class="credentials-list">
+                  <li><strong>Full Stack Developer</strong> — UC San Diego Extension (Dec 2020)</li>
+                  <li><strong>B.A. Sociology, Law &amp; Society</strong> — UC Riverside (Jun 2014)</li>
+                </ul>
+                <h4 class="credentials-heading">Also fluent with</h4>
+                <p class="credentials-note">Jira, Confluence, Tableau, Google Analytics; Gainsight, Eloqua, Marketo, Five9, Apttus, Conga, Advologix, and related go-to-market tooling.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section section-contact">
+        <div class="container contact-inner">
+          <h2 class="section-title">Let’s talk</h2>
+          <p class="contact-lead">
+            Hiring for underwriting, lending platforms, or partner integrations—or need a TPM who can stand up Salesforce architecture and speak fluently with engineering and risk?
+          </p>
+          <div class="hero-actions contact-actions">
+            <a class="btn btn-primary" href="mailto:mhandler1991@gmail.com">mhandler1991@gmail.com</a>
+            <a class="btn btn-ghost" href="https://www.linkedin.com/in/handler1991/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
+          <p class="contact-location">San Diego, CA</p>
+        </div>
+      </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="mt-auto text-center text-white-50 p-3" id="contact">
-      <p>Reach out via <a href="mailto:mhandler1991@gmail.com.com" class="text-white">email</a>
-        or find me on <a href="https://www.linkedin.com/in/handler1991/" class="text-white" target="_blank">LinkedIn</a>.</p>
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© <span id="year"></span> Maxwell Handler · San Diego, CA</p>
+        <p class="footer-note">Built as a static site — fast, accessible, easy to evolve.</p>
+      </div>
     </footer>
 
-
-<!-- Toast Container - Top Right -->
-<!-- <div class="position-fixed top-0 end-0 p-3" style="z-index: 11">
-    <div id="welcomeToast" class="toast align-items-center text-bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true">
-      <div class="d-flex">
-        <div class="toast-body">
-          Welcome! Please note my website is still under construction to better represent my work and skills. Please feel free to reach out if you have any questions or would like to connect.
-        </div>
-        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
-      </div>
-    </div>
-  </div> -->
-  
-  <!-- Toast Script -->
-  <!-- <script>
-    window.addEventListener('DOMContentLoaded', () => {
-      const toast = new bootstrap.Toast(document.getElementById('welcomeToast'), {
-        autohide: false
-      });
-      toast.show();
-    });
-  </script> -->
-  
+    <script src="js/scripts.js" defer></script>
   </body>
 </html>
