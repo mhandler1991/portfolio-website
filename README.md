@@ -1,78 +1,70 @@
-### Overview
+# maxwellhandler.com
 
->Please note I’m currently updating my website to better showcase my experience and skills — feel free to reach out in the meantime
+Personal portfolio site for **Maxwell Handler** — Senior Technical Product Manager working at the intersection of fintech platforms, APIs, and Salesforce architecture.
 
->View the page at [https://maxwellhandler.com](https://maxwellhandler.com)
+- 🌐 **Production:** [maxwellhandler.com](https://maxwellhandler.com) — `main` branch via GitHub Pages
+- 🧪 **Staging:** [maxwellhandler.netlify.app](https://maxwellhandler.netlify.app/) — `stage` branch via Netlify
 
-### Table of Contents
+---
 
-- [Saleforce SLDS Website](#saleforce-slds-website)
-    + [Overview](#overview)
-    + [Prerequisites](#prerequisites)
-    + [Project Structure](#Project-Structure)
-    + [Installing / Forking](#installing---forking)
-    + [How To](#how-to)
-    + [Contributing](#contributing)
-    + [License](#license)
-    + [Contact](#contact)
+## Stack
 
+- Static **HTML / CSS / vanilla JS** — no build step, no framework
+- Google Fonts: **DM Sans** + **Fraunces** (loaded with `preconnect`)
+- Hosted on **GitHub Pages** with custom domain via [`CNAME`](CNAME)
 
-### Prerequisites
+## Project structure
 
-Below you will find requirements to replicate this project:
+```
+.
+├── assets/
+│   ├── favicon.svg      # SVG favicon
+│   └── profile.jpg      # Hero portrait
+├── css/
+│   └── styles.css       # Design tokens, sections, animations
+├── js/
+│   └── scripts.js       # Mobile nav, year stamp, hero-tags marquee
+├── index.html           # Single-page entry
+├── CNAME                # GitHub Pages custom domain
+└── README.md
+```
 
+## Local preview
 
-### 📁 Project Structure
+No build step. Serve the folder with any static server:
 
-    - Website
-        - css/
-            - styles.css      # Styles for the portfolio website
-        - assets/ 
-            - profile.jpg
-        - js/
-            - scripts.js      # JavaScript for interactivity
-        - index.html - Home Page
-        - README
-        - CNAME*
+```bash
+# Python 3
+python -m http.server 8000
 
-### 🧰 Installing / Forking
+# Node
+npx serve .
+```
 
-1. Go to the [Github Repo](https://github.com/mhandler1991/)
-2. Then click __Clone or download__
-3. Clone using the HTTPS or SSH Key
-4. Open Git Bash
-5. Change to your working directory
-6. Type `git clone https://github.com/mhandler1991/.git'
-7. Press __Enter__
+Then open <http://127.0.0.1:8000/>.
 
-*For more information see this [Article](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)*
+## Deployment
 
+| Environment | Branch | Host | URL |
+| --- | --- | --- | --- |
+| Production | `main` | GitHub Pages | <https://maxwellhandler.com> |
+| Staging | `stage` | Netlify | <https://maxwellhandler.netlify.app/> |
 
+Workflow: push to `stage` → preview on Netlify → merge `stage` → `main` to ship to production. Custom domain is wired via [`CNAME`](CNAME).
 
-### How To
+## Notes
 
+- Respects `prefers-reduced-motion` (decorative animations and marquee disabled)
+- Mobile-friendly: viewport `viewport-fit=cover`, safe-area insets, 44px tap targets
+- `:focus-visible` outlines for keyboard navigation
+- Open Graph + Twitter Card metadata for link previews
+- SVG favicon — no PNG fallback needed in modern browsers
+- Single-page layout: hero, about, what I do, experience timeline, skills, credentials, contact
 
-### Contributing
+## License
 
-- Maxwell Handler - MaxwellHandler.com
+[MIT](https://opensource.org/license/mit) © Maxwell Handler
 
+## Contact
 
-### License
-
-Distributed under the MIT License. See `LICENSE` for more information.
-
-(The MIT License)
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the 'Software'), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-
-
-### Contact
-
-Maxwell Handler - mhandler1991@gmail.com
-
-Project Link: [https://github.com/mhandler1991/](https://github.com/mhandler1991/)
+mhandler1991@gmail.com**Maxwell**** Handler** — [mailto:mhandler1991@gmail.com](./mailto:mhandler1991@gmail.com) · [LinkedIn](https://www.linkedin.com/in/handler1991/)
