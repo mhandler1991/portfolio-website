@@ -135,9 +135,9 @@ function initHeroTagsTicker() {
   mqReduce.addEventListener("change", schedule);
 
   if (typeof ResizeObserver !== "undefined") {
-    var ro = new ResizeObserver(schedule);
+    const ro = new ResizeObserver(schedule);
     ro.observe(viewport);
-    var primaryGroup = track.querySelector(".hero-tags-group:not(.hero-tags-group--clone)");
+    const primaryGroup = track.querySelector(".hero-tags-group:not(.hero-tags-group--clone)");
     if (primaryGroup) {
       ro.observe(primaryGroup);
     }
