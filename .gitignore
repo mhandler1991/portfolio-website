@@ -1,3 +1,4 @@
 handoff/
 .DS_Store
 journey-update/
+.claude/settings.local.json
