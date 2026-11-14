@@ -95,6 +95,10 @@ To fill a link, replace the `<span class="pending">…</span>` with a real link.
 
 Copy rules: curly quotes and apostrophes (’ “ ”), arrows → and ↗, and no em dashes.
 
+### Changing CSS or JS
+
+GitHub Pages lets browsers cache files for 10 minutes, so a new `index.html` can load next to an old stylesheet. The links in `index.html` carry a version (`css/home.css?v=20261113`). When you change any file in `css/` or `js/`, set all three `?v=` values to the current date so visitors get the matching files right away.
+
 ## Deployment
 
 | Environment | Branch | Host | URL |
