@@ -61,6 +61,7 @@ Layout breakpoints: 640px (compact top bar and menu) and 500px (Journey rows and
 │   └── js/scripts.js
 ├── nimbalyst-local/plans/     # Planning notes for the archived AI Lab page
 ├── CNAME                      # Custom domain for GitHub Pages
+├── LICENSE                    # MIT (code)
 └── README.md
 ```
 
@@ -118,7 +119,7 @@ The custom domain is set by [`CNAME`](CNAME).
 
 ## License
 
-Code: [MIT](https://opensource.org/license/mit) © Maxwell Handler. Fonts: SIL Open Font License 1.1 (see [`assets/fonts/`](assets/fonts/)).
+Code: MIT, see [`LICENSE`](LICENSE). © Maxwell Handler. Fonts: SIL Open Font License 1.1 (see [`assets/fonts/`](assets/fonts/)).
 
 ## Contact
 
