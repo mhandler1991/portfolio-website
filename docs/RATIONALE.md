@@ -87,3 +87,6 @@ Owner decision 2026-11-14. Two reasons. GitHub auto-closes an issue only when a 
 
 ### R15. Why the only automated check is `git diff --check`
 The site has no build, lint or test tooling by design (PRD P1). `git diff --check` is the one check that needs nothing installed and can actually fail: it catches trailing whitespace and leftover conflict markers. Everything else (layout, the four-width check) is judged by eye on the Netlify preview.
+
+### R16. Why `/start` runs the diff check after staging, with `--cached`
+`git diff --check origin/stage` compares the working tree with `stage`, and git leaves untracked files out of that comparison. In #16 it printed clean while a new, untracked PR template had a trailing space; `git diff --check --cached` after staging caught it. Running the check on the index against `origin/stage` covers new files, staged edits and anything already committed on the branch. `/promote` keeps its two-ref form because two branches have no untracked files (#17).

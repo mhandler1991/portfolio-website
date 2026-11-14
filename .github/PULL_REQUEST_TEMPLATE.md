@@ -15,7 +15,7 @@ Closes #{issue}
 - `path`: new / modified
 
 ### Checks
-- [ ] `git diff --check origin/stage` clean (output quoted, written after it ran)
+- [ ] `git diff --check --cached origin/stage` clean, run after staging (output quoted, written after it ran)
 - [ ] Checked locally at 375, 768, 1280 and 1440px
 - [ ] Values come from `css/tokens.css`, no inline styles
 - [ ] Copy rules: curly quotes, → and ↗, no em dashes

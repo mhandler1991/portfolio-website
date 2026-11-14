@@ -20,7 +20,7 @@
 
 *In plain words: picks up one or more tickets, builds them, checks its own work, and opens a pull request for you to review.*
 
-Loads the issues and repo state, reads `PRD.md`/`ROADMAP.md` plus the docs `CLAUDE.md`'s map says apply, branches `feature/{issue}-{slug}` off `stage` (resuming if it exists), implements, self-reviews each issue's criteria, runs the prohibition sweep and `git diff --check`, commits with the decisions in the body, pushes, and opens the PR into `stage` (`Closes #N` for every issue). Text after the numbers is context.
+Loads the issues and repo state, reads `PRD.md`/`ROADMAP.md` plus the docs `CLAUDE.md`'s map says apply, branches `feature/{issue}-{slug}` off `stage` (resuming if it exists), implements, self-reviews each issue's criteria, runs the prohibition sweep, stages the files and runs `git diff --check --cached origin/stage`, commits with the decisions in the body, pushes, and opens the PR into `stage` (`Closes #N` for every issue). Text after the numbers is context.
 
 ## `/merged {pr}`
 
