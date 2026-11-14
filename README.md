@@ -60,6 +60,10 @@ Layout breakpoints: 640px (compact top bar and menu) and 500px (Journey rows and
 │   ├── css/styles.css
 │   └── js/scripts.js
 ├── nimbalyst-local/plans/     # Planning notes for the archived AI Lab page
+├── docs/                      # PRD, roadmap, rationale, workflow and command cheat sheet
+├── .claude/skills/            # Claude Code workflow commands (/start, /merged, /promote, …)
+├── .github/                   # Issue and pull request templates
+├── CLAUDE.md                  # Standards for AI-assisted development
 ├── CNAME                      # Custom domain for GitHub Pages
 ├── LICENSE                    # MIT (code)
 └── README.md
@@ -106,7 +110,7 @@ Copy rules: curly quotes and apostrophes (’ “ ”), arrows → and ↗, and 
 2. Merge it, then check the Netlify preview.
 3. Merge `stage` into `main` to ship to production.
 
-The custom domain is set by [`CNAME`](CNAME).
+The custom domain is set by [`CNAME`](CNAME). `stage` is the repository's default branch; GitHub Pages builds from `main`. The full branch and command loop is in [`docs/workflow.md`](docs/workflow.md).
 
 ## Accessibility
 
