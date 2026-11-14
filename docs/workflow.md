@@ -28,7 +28,7 @@ feature/<issue>-<slug>
 
 | Thing | Status | Notes |
 |---|---|---|
-| Whitespace / conflict-marker check | ⚙️ `git diff --check origin/stage`, run by `/start` and `/promote` | No CI; there is no build, lint or test tooling (PRD P1) |
+| Whitespace / conflict-marker check | ⚙️ `git diff --check --cached origin/stage`, run by `/start` after staging; `/promote` checks `origin/main origin/stage` | No CI; there is no build, lint or test tooling (PRD P1) |
 | Staging deploy | 🚀 Automatic, Netlify on push to `stage` | |
 | Production deploy | 🚀 Automatic, GitHub Pages on push to `main` | |
 | Visual check at 375, 768, 1280, 1440px | 🧑‍💻 Manual | Layout and the red-pencil marks can only be judged by eye |

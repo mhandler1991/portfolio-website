@@ -104,7 +104,7 @@ Layout of files and what each owns: `README.md` "Architecture" and "Folder struc
 ## 8. Testing
 
 No automated tests by design (R15). The checks are:
-- `git diff --check origin/stage` (whitespace and conflict markers), run by `/start` and `/promote`.
+- `git diff --check --cached origin/stage` (whitespace and conflict markers), run by `/start` after staging so new files are covered (R16). `/promote` runs the branch-to-branch form, `git diff --check origin/main origin/stage`.
 - `grep -n TODO index.html` to list remaining placeholders when a change touches them.
 - A manual visual check at 375, 768, 1280 and 1440px with `python3 -m http.server 8000`, then on the Netlify preview.
 

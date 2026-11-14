@@ -47,12 +47,12 @@ $ARGUMENTS
 7. Self-review each issue's criteria separately. Say plainly anything unmet. A verification only counts if its unfixed case would have failed it, so confirm that, and test the operation itself rather than a proxy for it.
 8. File discovered work as a real issue first (`gh issue create`, ticket shape: Purpose, User story, Description, Acceptance criteria, Depends on / Blocks, Effort / Model) and cite its number only after `gh` returns it (R4). Solo-trusted: also fold small, closely related work into this session. Conservative: leave it for a future one. Never leave it as an unfiled note.
 9. Run the prohibition sweep from `CLAUDE.md` §2/§12. It must prove it read something: count the files scanned and state the count, so "clean" can't mean "scanned nothing".
-10. Run the checks as one chained command and report the real output:
+10. Stage specific files, never a blanket add. Then run the check on what's staged and report the real output (it must run after staging, or new files are invisible to it: `docs/RATIONALE.md` R16):
     ```bash
-    git diff --check origin/stage
+    git diff --check --cached origin/stage
     ```
-    Fix the implementation, never the test. Remove scratch files, branches or worktrees a check creates with the tool that made them, never `rm -rf` (the deny list blocks it on purpose).
-11. Stage specific files, never a blanket add. Commit with facts in the body: what changed, and the decisions made and alternatives rejected. If the reason for a change is uncertain or contested, put that interpretation in the PR body instead, because a commit can't be amended later without a force-push.
+    Fix the implementation, never the test; re-stage and re-run until clean. Remove scratch files, branches or worktrees a check creates with the tool that made them, never `rm -rf` (the deny list blocks it on purpose).
+11. Commit with facts in the body: what changed, and the decisions made and alternatives rejected. If the reason for a change is uncertain or contested, put that interpretation in the PR body instead, because a commit can't be amended later without a force-push.
     ```
     {{type}}({{scope}}): {{description}}
 
