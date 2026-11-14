@@ -247,28 +247,48 @@ mark {
 .experiment__title { font-size: var(--text-22); font-weight: 600; line-height: var(--leading-heading); }
 .experiment strong { font-weight: 600; }
 
-/* 04 Path */
+/* 04 Journey */
 .path__intro { display: flex; flex-direction: column; gap: var(--space-2); max-width: 680px; margin-bottom: var(--space-6); }
 .path__lede { font-size: var(--text-22); line-height: var(--leading-lede); font-weight: 500; }
 .path__sub { font-size: var(--text-16); color: var(--muted); }
+/* "More to come!" lead-in: pencil arrow up from the timeline, handwritten note beside it.
+   The stroke ends 9px above the first row so it reads as drawn, not as the timeline. */
+.journey-more { position: relative; min-height: 96px; padding: 6px 0 var(--space-3) var(--space-6); }
+.journey-more__arrow {
+  position: absolute; left: -20px; top: 0; width: 40px; height: 100%; overflow: visible; color: var(--pencil);
+}
+.journey-more__text {
+  display: flex; flex-direction: column; gap: var(--space-1);
+  transform: rotate(-2deg); transform-origin: left top;
+  font-family: var(--font-hand); font-weight: 500; color: var(--pencil);
+}
+.journey-more__title { font-size: 34px; line-height: var(--leading-tight); }
+.journey-more__sub { font-size: 24px; line-height: var(--leading-heading); }
 .timeline { list-style: none; padding: 0; border-left: 1px solid var(--ink); }
 .timeline__row {
-  position: relative; display: grid; grid-template-columns: 80px minmax(0, 1fr) minmax(0, 1.3fr);
+  position: relative; display: grid; grid-template-columns: 112px minmax(0, 1fr) minmax(0, 1.3fr);
   gap: var(--space-4); padding: var(--space-4) 0 var(--space-4) var(--space-6); border-top: 1px solid var(--rule);
 }
 .timeline__row::before {
   content: ""; position: absolute; left: -5px; top: 22px; width: 10px; height: 10px;
   border-radius: 50%; background: var(--ink);
 }
-.timeline__row--current::before { background: var(--accent); }
+/* Current role: larger accent dot with a soft pulsing ring (decorative, so a pseudo-element) */
+.timeline__row--current::before {
+  left: -6px; top: 21px; width: 12px; height: 12px; background: var(--accent);
+  animation: mh-pulse 2.4s ease-out infinite;
+}
+@keyframes mh-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(29, 78, 216, 0.45); }
+  70% { box-shadow: 0 0 0 10px rgba(29, 78, 216, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(29, 78, 216, 0); }
+}
+@media (prefers-reduced-motion: reduce) { .timeline__row--current::before { animation: none; } }
 .timeline__year {
   position: relative; align-self: start; padding-top: 2px;
   font-family: var(--font-mono); font-size: var(--text-13);
 }
-.timeline__row--current .timeline__year { font-weight: 500; }
-.timeline__circle {
-  position: absolute; left: -12px; top: -8px; width: 62px; height: 36px; overflow: visible; color: var(--pencil);
-}
+.timeline__row--current .timeline__year { font-weight: 500; white-space: nowrap; justify-self: start; }
 .timeline__role { display: flex; flex-direction: column; gap: var(--space-1); }
 .timeline__title { font-size: var(--text-16); font-weight: 600; }
 .timeline__company { font-size: var(--text-15); color: var(--muted); }
