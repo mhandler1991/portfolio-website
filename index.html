@@ -2,327 +2,449 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <meta name="theme-color" content="#0c0f14">
-    <meta name="description" content="Maxwell Handler — Senior Technical Product Manager in fintech platforms ($750M+ lending portfolio). Salesforce Application Architect and full-stack developer, San Diego.">
-    <title>Maxwell Handler · Senior Technical PM · Fintech &amp; Platforms</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Maxwell Handler</title>
+    <meta name="description" content="Product manager in San Diego. I run a technical product team in fintech lending, and I build software with Claude.">
+    <meta name="theme-color" content="#FFFFFF">
     <link rel="canonical" href="https://maxwellhandler.com/">
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://maxwellhandler.com/">
-    <meta property="og:title" content="Maxwell Handler · Senior Technical PM · Fintech &amp; Platforms">
-    <meta property="og:description" content="Senior Technical Product Manager building fintech lending platforms at the intersection of strategy, systems, and code.">
+    <meta property="og:title" content="Maxwell Handler">
+    <meta property="og:description" content="Product manager in San Diego. I run a technical product team in fintech lending, and I build software with Claude.">
     <meta property="og:image" content="https://maxwellhandler.com/assets/profile.jpg">
     <meta property="og:image:alt" content="Portrait of Maxwell Handler">
-
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:url" content="https://maxwellhandler.com/">
-    <meta name="twitter:title" content="Maxwell Handler · Senior Technical PM · Fintech &amp; Platforms">
-    <meta name="twitter:description" content="Senior Technical Product Manager building fintech lending platforms at the intersection of strategy, systems, and code.">
+    <meta name="twitter:title" content="Maxwell Handler">
+    <meta name="twitter:description" content="Product manager in San Diego. I run a technical product team in fintech lending, and I build software with Claude.">
     <meta name="twitter:image" content="https://maxwellhandler.com/assets/profile.jpg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&display=swap" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
+
+    <link rel="preload" href="assets/fonts/Geist-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/Geist-Medium.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/home.css">
   </head>
   <body>
-    <div class="noise" aria-hidden="true"></div>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-    <header class="site-header">
-      <div class="container header-inner">
-        <a class="logo" href="#top">MH</a>
-        <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
-          <span class="sr-only">Menu</span>
-          <span class="nav-toggle-bar"></span>
-          <span class="nav-toggle-bar"></span>
-        </button>
-        <nav id="site-nav" class="site-nav" aria-label="Primary">
-          <a href="#about">About</a>
-          <a href="#pillars">What I do</a>
-          <a href="#experience">Experience</a>
-          <a href="#skills">Skills</a>
-          <a href="#credentials">Credentials</a>
-          <a href="/ai/" class="nav-cta nav-cta-primary">AI Lab</a>
-          <a href="#contact" class="nav-cta">Contact</a>
-        </nav>
-      </div>
+    <!-- Top bar -->
+    <header class="topbar">
+      <nav class="topbar__nav wrap" aria-label="Primary">
+        <a class="topbar__name" href="#top">Maxwell Handler</a>
+        <div class="topbar__right">
+          <div class="nav-sections">
+            <a href="#how-i-work">How I work</a>
+            <a href="#builds">Builds</a>
+            <a href="#experiments">Experiments</a>
+            <a href="#path">Path</a>
+            <a href="#contact">Contact</a>
+          </div>
+          <a class="topbar__resume" href="https://docs.google.com/document/d/e/2PACX-1vSrySJOaq8SuYeRH-K_3uF4G3KK_gRlw0_6EuYZO0PegL6YQ7afXb8db5gmuZ7FHSu0zb8z-pK59tql/pub">Resume ↗</a>
+          <button type="button" class="btn btn--secondary menu-btn" id="menu-btn" aria-expanded="false" aria-controls="menu-panel">Menu</button>
+        </div>
+      </nav>
+      <nav class="menu-panel" id="menu-panel" aria-label="Sections">
+        <a href="#how-i-work">How I work</a>
+        <a href="#builds">Builds</a>
+        <a href="#experiments">Experiments</a>
+        <a href="#path">Path</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </header>
 
-    <main id="top">
-      <section class="hero">
-        <div class="hero-bg" aria-hidden="true">
-          <div class="blob blob-a"></div>
-          <div class="blob blob-b"></div>
-          <div class="blob blob-c"></div>
+    <main id="main">
+      <!-- Header -->
+      <div class="intro wrap" id="top">
+        <p class="intro__status"><span class="intro__dot" aria-hidden="true"></span>Now: taking Tempus from TestFlight to launch</p>
+        <h1 class="intro__name">Maxwell Handler</h1>
+        <p class="intro__lede">Product manager in San Diego. I run a technical product team in fintech lending, and I build software with Claude.</p>
+        <nav class="intro__links" aria-label="Profiles">
+          <a href="https://docs.google.com/document/d/e/2PACX-1vSrySJOaq8SuYeRH-K_3uF4G3KK_gRlw0_6EuYZO0PegL6YQ7afXb8db5gmuZ7FHSu0zb8z-pK59tql/pub">Resume ↗</a>
+          <a href="https://linkedin.com/in/handler1991/">LinkedIn ↗</a>
+          <a href="https://github.com/mhandler1991">GitHub ↗</a>
+          <a href="mailto:Mhandler1991@gmail.com">Email</a>
+        </nav>
+      </div>
+
+      <!-- 01 How I work -->
+      <section class="section wrap" id="how-i-work" aria-labelledby="how-i-work-title">
+        <div class="section__inner how">
+          <div>
+            <h2 class="section-title" id="how-i-work-title"><span class="section-title__num">01</span>How I work</h2>
+            <div class="how__intro">
+              <p class="thesis">
+                <span class="thesis__mark">I build proofs of concept before PRDs.<svg class="thesis__underline" aria-hidden="true" focusable="false" viewBox="0 0 520 18" preserveAspectRatio="none"><path d="M3 11 C 70 6, 140 9, 210 7 S 360 5, 430 8 S 500 9, 516 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" opacity="0.9"/><path d="M40 14 C 120 11, 230 13, 330 11 S 450 12, 488 10" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.55"/></svg></span>
+              </p>
+              <p class="how__body">A working prototype answers the questions a spec can only list, so I bring the business and engineering teams something they can use, not a document they have to imagine from. The prototype, and the conversation with Claude that built it, is the spec.</p>
+            </div>
+          </div>
+
+          <ol class="steps" id="steps">
+            <li class="step"><span class="step__num">01</span><span class="step__title">Kickoff</span><span class="step__text">project-kickoff writes the PRD, roadmap and CLAUDE.md before any code.</span></li>
+            <li class="step"><span class="step__num">02</span><span class="step__title">Issues</span><span class="step__text">Work is cut into issues small enough for one session.</span></li>
+            <li class="step"><span class="step__num">03</span><span class="step__title">Session</span><span class="step__text">/start picks an issue; Claude Code builds it against the docs.</span></li>
+            <li class="step"><span class="step__num">04</span><span class="step__title">Review</span><span class="step__text">/ship opens a PR. I review it before it merges.</span></li>
+            <li class="step"><span class="step__num">05</span><span class="step__title">Ship</span><span class="step__text">Merging closes the issue and deploys.</span></li>
+          </ol>
+
+          <div class="workflow">
+            <p class="label">The workflow, in detail</p>
+            <ul class="cards">
+              <li class="card"><code class="card__file">CLAUDE.md</code><span class="card__text">Project rules every session reads before it touches code.</span></li>
+              <li class="card"><code class="card__file">docs/PRD.md · ROADMAP.md</code><span class="card__text">What and why, kept separate from build order.</span></li>
+              <li class="card"><code class="card__file">.claude/skills/start · ship · merged</code><span class="card__text">Pick an issue, open the PR, clean up after merge. Manual only: Claude can’t run them on its own.</span></li>
+              <li class="card"><code class="card__file">.claude/settings.json</code><span class="card__text">Standing permissions per tool, so sessions don’t stop to ask about git.</span></li>
+              <li class="card"><code class="card__file">The issue rule</code><span class="card__text">Anything that takes more than a couple of prompts gets an issue. One at a time.</span></li>
+              <li class="card"><code class="card__file">.github/PULL_REQUEST_TEMPLATE.md</code><span class="card__text">Every PR answers the same questions.</span></li>
+              <li class="card"><code class="card__file">Token report</code><span class="card__text">Measures what each session loads. In lantern it cut that in half.</span></li>
+              <li class="card"><code class="card__file">/audit-docs</code><span class="card__text">Checks the doc set for drift and files what it finds.</span></li>
+            </ul>
+            <p class="workflow__note">The same kit starts every project. <a href="https://github.com/mhandler1991/lantern">See it in lantern’s repo ↗</a></p>
+          </div>
         </div>
-        <div class="container hero-inner">
-          <p class="hero-kicker">Product · Architecture · Salesforce · Fintech platforms</p>
-          <h1 class="hero-title">
-            Hi, I’m <span class="accent">Max</span>. I lead technical product teams for fintech—where platforms, APIs, and customer experience have to line up.
-          </h1>
-          <p class="hero-lead">
-            Senior Technical Product Manager building fintech lending platforms at the intersection of strategy, systems, and code.
-          </p>
-          <div class="hero-tags-shell" id="hero-tags-shell">
-            <div class="hero-tags-viewport">
-              <div class="hero-tags-track" id="hero-tags-track">
-                <div class="hero-tags-group">
-                  <ul class="hero-tags" aria-label="Focus areas">
-                    <li>User &amp; Partner Portals</li>
-                    <li>Underwriting &amp; Decisioning</li>
-                    <li>Partner &amp; System APIs</li>
-                    <li>Salesforce Architecture</li>
-                  </ul>
+      </section>
+
+      <!-- 02 Builds -->
+      <section class="section wrap" id="builds" aria-labelledby="builds-title">
+        <div class="section__inner">
+          <h2 class="section-title" id="builds-title"><span class="section-title__num">02</span>Builds</h2>
+
+          <!-- 01 Tempus -->
+          <article class="project" aria-labelledby="tempus-title">
+            <div class="project__grid">
+              <div class="rail">
+                <span class="rail__num">01</span>
+                <h3 class="project__title" id="tempus-title">Tempus</h3>
+                <dl class="meta">
+                  <div class="meta__row"><dt class="label">Platform</dt><dd>iOS, TestFlight beta</dd></div>
+                  <div class="meta__row"><dt class="label">When</dt><dd>May → Jul 2026; back on it now</dd></div>
+                  <div class="meta__row"><dt class="label">Stack</dt><dd>SwiftUI, Node, TypeScript, Prisma, Postgres, Railway</dd></div>
+                </dl>
+                <div class="rail__links">
+                  <!-- TODO: Tempus TestFlight public link. Replace this pending span with <a class="link-sm" href="…">TestFlight ↗</a> -->
+                  <span class="pending"><span class="pending__text">TestFlight</span><span class="pending__tag">Soon</span></span>
+                  <span class="rail__note">Repo is private</span>
+                </div>
+              </div>
+              <div class="story">
+                <p class="story__lede">An app that helps friends and family get together on a regular cadence, working around everyone’s existing commitments. Built solo.</p>
+                <!-- TODO: Tempus screenshots. Replace each placeholder frame with <img> inside .phone (home feed, Grid Refiner) and real alt text describing the screen. -->
+                <div class="phones">
+                  <div class="phone" role="img" aria-label="Tempus home feed screenshot, coming soon">[Screenshot: home feed]</div>
+                  <div class="phone" role="img" aria-label="Tempus Grid Refiner screenshot, coming soon">[Screenshot: Grid Refiner]</div>
+                </div>
+                <h4 class="label story__label">Process</h4>
+                <p class="story__text">Planned in Linear as milestones, built one issue at a time in Claude Code with custom skills, then audited. A full review of the iOS app (89 Swift files, about 17,000 lines) became the tickets for the next milestone.</p>
+                <div class="outcomes">
+                  <div>
+                    <h4 class="outcomes__label">+ Worked</h4>
+                    <ul>
+                      <li><mark>201 commits in the first week.</mark></li>
+                      <li>The review found zero force unwraps and no hardcoded secrets.</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 class="outcomes__label outcomes__label--didnt">&#8722; Didn’t</h4>
+                    <ul>
+                      <li>Hit Linear’s free-plan limit mid-project. Tickets moved to markdown files, then to GitHub Issues to match the workflow I use now.</li>
+                      <li>The first external TestFlight upload went out as internal-only; testers couldn’t see it until it was re-archived.</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="https://www.linkedin.com/in/handler1991/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            <a class="btn btn-ghost" href="https://docs.google.com/document/d/e/2PACX-1vSrySJOaq8SuYeRH-K_3uF4G3KK_gRlw0_6EuYZO0PegL6YQ7afXb8db5gmuZ7FHSu0zb8z-pK59tql/pub" target="_blank" rel="noopener noreferrer">Resume</a>
-            <a class="btn btn-ghost" href="mailto:mhandler1991@gmail.com">Email me</a>
-          </div>
-          <div class="hero-profile" id="hero-profile">
-            <span class="hero-photo-fallback" aria-hidden="true">MH</span>
-            <img src="assets/profile.jpg" alt="Portrait of Maxwell Handler" width="200" height="200" loading="eager" class="hero-photo" id="hero-photo">
-          </div>
+          </article>
+
+          <!-- 02 codename lantern -->
+          <article class="project" aria-labelledby="lantern-title">
+            <div class="project__grid">
+              <div class="rail">
+                <span class="rail__num">02</span>
+                <h3 class="project__title--redacted" id="lantern-title">
+                  <span class="sr-only">codename lantern</span>
+                  <span class="label" aria-hidden="true">codename</span>
+                  <span class="redact" aria-hidden="true"><span class="redact__word">lantern</span><span class="redact__bar"></span></span>
+                </h3>
+                <dl class="meta">
+                  <div class="meta__row"><dt class="label">Platform</dt><dd>Web, peer-to-peer</dd></div>
+                  <div class="meta__row"><dt class="label">When</dt><dd>Aug → Sep 2026</dd></div>
+                  <div class="meta__row"><dt class="label">Stack</dt><dd>Vite, React 18, TypeScript, Vitest, Zod</dd></div>
+                </dl>
+                <div class="rail__links">
+                  <a class="link-sm" href="https://github.com/mhandler1991/lantern">Repo ↗</a>
+                  <!-- TODO: lantern live URL. Replace with <a class="link-sm" href="…">Live ↗</a> -->
+                  <span class="pending"><span class="pending__text">Live</span><span class="pending__tag">Soon</span></span>
+                </div>
+              </div>
+              <div class="story">
+                <p class="story__lede">A companion for the Shadowdark tabletop RPG: guided character creation, character sheets, and a shared party room with a game master role.</p>
+                <h4 class="label story__label">Process</h4>
+                <p class="story__text">Started from a single-file character sheet a friend in my D&amp;D group built. Before any code: six foundation docs (PRD, design, data model, deploy, workflow, CLAUDE.md). After that, every change went through an issue: <mark>58 of the 64 non-deploy commits close one.</mark></p>
+                <div class="outcomes">
+                  <div>
+                    <h4 class="outcomes__label">+ Worked</h4>
+                    <ul>
+                      <li>A token report cut the context each session loads in half.</li>
+                      <li>Licensing settled up front: spell names and mechanics only, no rulebook text.</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 class="outcomes__label outcomes__label--didnt">&#8722; Didn’t</h4>
+                    <ul>
+                      <li>Slash-command arguments were wired wrong at first and needed a fix.</li>
+                      <!-- TODO: lantern second "Didn’t" item (Max to supply). -->
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 03 TheTable -->
+          <article class="project" aria-labelledby="thetable-title">
+            <div class="project__grid">
+              <div class="rail">
+                <span class="rail__num">03</span>
+                <h3 class="project__title" id="thetable-title">TheTable</h3>
+                <dl class="meta">
+                  <div class="meta__row"><dt class="label">Platform</dt><dd>Web, peer-to-peer</dd></div>
+                  <div class="meta__row"><dt class="label">When</dt><dd>Aug 2026</dd></div>
+                  <div class="meta__row"><dt class="label">Stack</dt><dd>Vite, dice-box-threejs, Trystero</dd></div>
+                </dl>
+                <div class="rail__links">
+                  <div class="try">
+                    <a class="btn btn--primary" href="https://mhandler1991.github.io/TheTable">Roll some dice ↗</a>
+                    <div class="try__note" aria-hidden="true">
+                      <span class="try__text">try it!</span>
+                      <svg class="try__arrow" viewBox="0 0 96 70" focusable="false"><path d="M38 30 C 26 34, 14 40, 4 50" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M4 50 L 14 47 M4 50 L 7 40" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                    </div>
+                  </div>
+                  <a class="link-sm" href="https://github.com/mhandler1991/TheTable">Repo ↗</a>
+                </div>
+              </div>
+              <div class="story">
+                <p class="story__lede">A multiplayer 3D dice roller for D&amp;D. Players join a room and roll together, with no server.</p>
+                <h4 class="label story__label">Process</h4>
+                <p class="story__text">I didn’t build physics or networking. The dice come from an open-source 3D dice library and the connections from Trystero, a peer-to-peer library, so the work went into the table itself. A short spike against the dice library came first, and it found three bugs in the library before any UI existed.</p>
+                <div class="outcomes">
+                  <div>
+                    <h4 class="outcomes__label">+ Worked</h4>
+                    <ul>
+                      <li>Spike first: library bugs surfaced before they could hide inside the UI.</li>
+                      <li>A black-screen bug produced a boot smoke test that now runs on every build.</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 class="outcomes__label outcomes__label--didnt">&#8722; Didn’t</h4>
+                    <ul>
+                      <li>The host couldn’t connect to invited players. Five rounds of diagnosis later, the relay servers I’d added to fix connectivity were the cause.</li>
+                      <li>Die numbers read as the wrong digits in a high-contrast font at small sizes. Swapped the font.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 04 project-kickoff -->
+          <article class="project" aria-labelledby="kickoff-title">
+            <div class="project__grid">
+              <div class="rail">
+                <span class="rail__num">04</span>
+                <h3 class="project__title" id="kickoff-title">project-kickoff</h3>
+                <dl class="meta">
+                  <div class="meta__row"><dt class="label">Type</dt><dd>Claude Code skill</dd></div>
+                  <div class="meta__row"><dt class="label">When</dt><dd>Sep 2026</dd></div>
+                  <div class="meta__row"><dt class="label">Used on</dt><dd>ClaudeAssistant, new projects</dd></div>
+                </dl>
+                <div class="rail__links">
+                  <!-- TODO: project-kickoff repo link. Replace with <a class="link-sm" href="…">Repo ↗</a> -->
+                  <span class="pending"><span class="pending__text">Repo</span><span class="pending__tag">Soon</span></span>
+                </div>
+              </div>
+              <div class="story">
+                <p class="story__lede">Writes a new project’s starter docs and repo scaffolding, scaled to how complex the project is.</p>
+                <h4 class="label story__label">Process</h4>
+                <p class="story__text">Built by auditing lantern’s docs and turning what worked into a template. Its first real test was ClaudeAssistant, a pipeline that turns GitHub issues into draft PRs; that project’s running audit log feeds fixes back into the kit.</p>
+                <h4 class="label story__label">How it changed</h4>
+                <ul class="labeled">
+                  <li class="labeled__row"><span class="labeled__key">Tiers</span><span class="labeled__val">One doc set for everything became three tiers (Utility, App, Platform), so a small script doesn’t get a platform’s paperwork.</span></li>
+                  <li class="labeled__row"><span class="labeled__key">Split</span><span class="labeled__val">PRD.md split into PRD (what and why) and ROADMAP (build order).</span></li>
+                  <li class="labeled__row"><span class="labeled__key">Layout</span><span class="labeled__val">Docs moved under docs/. Only README, CLAUDE.md and LICENSE stay at the root.</span></li>
+                  <li class="labeled__row"><span class="labeled__key">Commands</span><span class="labeled__val">/start, /ship and /merged moved from commands to skills when Claude Code merged the two, set so Claude can’t trigger them on its own.</span></li>
+                  <li class="labeled__row"><span class="labeled__key">Web</span><span class="labeled__val">A claude.ai version, which has no git access: it writes the same files plus a setup script to run locally.</span></li>
+                </ul>
+                <div class="outcomes">
+                  <div>
+                    <h4 class="outcomes__label">+ Worked</h4>
+                    <ul>
+                      <li>The same doc set now starts every project, in the CLI, VS Code and claude.ai.</li>
+                      <li>Its first real project, ClaudeAssistant, merged 14 PRs in its first week.</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 class="outcomes__label outcomes__label--didnt">&#8722; Didn’t</h4>
+                    <ul>
+                      <li>Argument placeholders broke in lantern’s commands. The kit now confirms how arguments are read before relying on them.</li>
+                      <li>The first doc audit on that project found three problems in the kit’s own docs.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 05 doc-tailor. Keep generic: never say what the documents are for. -->
+          <article class="project" aria-labelledby="doctailor-title">
+            <div class="project__grid">
+              <div class="rail">
+                <span class="rail__num">05</span>
+                <h3 class="project__title" id="doctailor-title">doc-tailor</h3>
+                <dl class="meta">
+                  <div class="meta__row"><dt class="label">Type</dt><dd>Claude skill</dd></div>
+                  <div class="meta__row"><dt class="label">Status</dt><dd>In daily use</dd></div>
+                  <div class="meta__row"><dt class="label">Reads</dt><dd>Master document, fact bank (Google Drive)</dd></div>
+                </dl>
+                <div class="rail__links">
+                  <!-- TODO: doc-tailor sample run link. Must be a generic, redacted example. Replace with <a class="link-sm" href="…">Sample run ↗</a> -->
+                  <span class="pending"><span class="pending__text">Sample run</span><span class="pending__tag">Soon</span></span>
+                </div>
+              </div>
+              <div class="story">
+                <p class="story__lede">Tailors a master document to a specific brief. It scores the fit first, then rewrites using only facts I’ve approved, and checks the result stays within its page limit.</p>
+                <h4 class="label story__label">How it got here</h4>
+                <ol class="labeled">
+                  <li class="labeled__row"><span class="labeled__key labeled__key--version">v0</span><span class="labeled__body"><span class="labeled__name">by hand</span><span class="labeled__val">I pasted document versions into chat and got edits back. Across 63 older versions, facts conflicted and numbers had drifted between sections.</span><span class="labeled__gain"><span>Gain:</span> Showed the real problem: the source material, not the editing.</span></span></li>
+                  <li class="labeled__row"><span class="labeled__key labeled__key--version">v1</span><span class="labeled__body"><span class="labeled__name">first skill</span><span class="labeled__val">One master document and one fact bank. The skill may only select and rephrase from the bank. Cost: every page check exported a PDF into the conversation, about 100K characters each.</span><span class="labeled__gain"><span>Gain:</span> Nothing invented: every line traces back to an approved fact.</span></span></li>
+                  <li class="labeled__row"><span class="labeled__key labeled__key--version">v2</span><span class="labeled__body"><span class="labeled__name">lighter checks</span><span class="labeled__val">A script estimates page length from the saved doc, and the PDF exports once, at the end. The Google Docs rules it needs are built in instead of loading a 15 to 20K-token skill.</span><span class="labeled__gain"><span>Gain:</span> Page checks went from one PDF per check to one per run.</span></span></li>
+                  <li class="labeled__row"><span class="labeled__key labeled__key--version labeled__key--current">v2.1</span><span class="labeled__body"><span class="labeled__name">current</span><span class="labeled__val">Scores the fit first and stops. Nothing is copied or edited until I reply go.</span><span class="labeled__gain"><span>Gain:</span> Low-fit requests stop before any work starts.</span></span></li>
+                </ol>
+                <h4 class="label story__label">Why it landed here</h4>
+                <p class="story__text">Two rules carry it. A closed fact bank means the model can rephrase but can’t invent. The scoring gate means low-fit requests stop before any work starts.</p>
+                <div class="outcomes">
+                  <div>
+                    <h4 class="outcomes__label">+ Worked</h4>
+                    <ul>
+                      <li>Every tailored version traces back to an approved fact.</li>
+                      <li>Low-fit requests stop before any document is copied or edited.</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 class="outcomes__label outcomes__label--didnt">&#8722; Didn’t</h4>
+                    <ul>
+                      <li>An install dropped the page-length script, and several runs quietly fell back to estimates until I repackaged it.</li>
+                      <li>The score measures fit on paper, not the outcome. It can’t see context that isn’t in the documents.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
         </div>
       </section>
 
-      <section id="about" class="section section-about">
-        <div class="container narrow">
-          <h2 class="section-title">How I work</h2>
-          <p class="large-text">
-            I’m comfortable leading when the path isn’t obvious—framing ambiguity into priorities, tradeoffs, and a plan the org can execute.
-            I run cross-functional programs across <strong>marketing, sales, operations, legal, and customer service</strong>, aligning incentives so delivery isn’t a handoff marathon.
-            I challenge the status quo when “how we’ve always done it” gets in the way of customers, risk posture, or velocity—but I do it with evidence and respect for the constraints.
-          </p>
-          <p class="large-text">
-            I’m strongest where <strong>product strategy meets technical execution</strong>: the narrative has to match what engineering can ship, and what compliance and ops can run.
-            I’ve grown from hands-on technical architecture into owning roadmaps for <strong>APIs, portals, and data partnerships</strong> that create material impact—conversion, throughput, portfolio performance, and how the company actually operates day to day.
-          </p>
-          <p class="large-text">
-            <strong>I ship changes, not slides.</strong> My bias is toward launches, learning in production, and systems teams trust when the edge cases show up.
-          </p>
+      <!-- 03 Experiments -->
+      <section class="section wrap" id="experiments" aria-labelledby="experiments-title">
+        <div class="section__inner">
+          <h2 class="section-title" id="experiments-title"><span class="section-title__num">03</span>Experiments</h2>
+          <ul class="experiments">
+            <li class="card experiment">
+              <span class="experiment__meta">Spring 2026 · Parked</span>
+              <h3 class="experiment__title">The site that tried to rebuild itself</h3>
+              <p class="card__text">The first version of this site ran three agents: a PM that compared it to other sites and wrote a PRD, an engineer that built it, and a QA agent that checked the code against the PRD.</p>
+              <p class="card__text"><strong>What I learned:</strong> token use hit limits fast, and I never found a clean rule for when to step in myself.</p>
+            </li>
+            <li class="card experiment">
+              <span class="experiment__meta">Sep 2026 · Working</span>
+              <h3 class="experiment__title">A game in the status line</h3>
+              <p class="card__text">An idle dungeon crawler that runs inside Claude Code. Every tool call counts as a click: hooks update a state file, and the status line draws the scene.</p>
+              <p class="card__text"><strong>What I learned:</strong> I work in VS Code’s Claude panel, where the status line doesn’t show, so I built a sidebar extension on the same state file. Then I noticed the monsters never got harder: a depth counter was never incremented.</p>
+              <!-- TODO: screenshot of the status-line game's VS Code sidebar. Replace with <img> plus real alt text. -->
+              <span class="pending"><span class="pending__text">Sidebar screenshot</span><span class="pending__tag">Soon</span></span>
+            </li>
+          </ul>
         </div>
       </section>
 
-      <section id="pillars" class="section section-pillars">
-        <div class="container">
-          <div class="section-head">
-            <h2 class="section-title">Three lenses, one owner</h2>
-            <p class="section-sub">Growing through product, engineering, and Salesforce gives me perspectives—and helps me spot opportunities—that are easy to miss from a single lane.</p>
-          </div>
-          <div class="pillar-grid">
-            <article class="pillar-card pillar-card-pm">
-              <span class="pillar-icon" aria-hidden="true">◇</span>
-              <h3>Technical product leadership</h3>
-              <p>Owned strategy for lending platforms, merchant experiences, and broker channels tied to conversion, processing time, and portfolio performance—partnering across eng, design, data science, risk, and ops.</p>
-            </article>
-            <article class="pillar-card pillar-card-dev">
-              <span class="pillar-icon" aria-hidden="true">⌘</span>
-              <h3>Platforms &amp; integrations</h3>
-              <p>Partner APIs for real-time loan intake, Plaid-powered bank data for onboarding and renewals, SQL-backed funnel analysis—and comfort debating schema, SLAs, and rollback plans with engineering.</p>
-            </article>
-            <article class="pillar-card pillar-card-sfdc">
-              <span class="pillar-icon" aria-hidden="true">☁</span>
-              <h3>Salesforce &amp; CRM scale</h3>
-              <p>Governed multi-org Salesforce footprints, CI/CD with GitHub and Gearset, security and sharing models—Application Architect certified, with Apex, LWC, and operational discipline.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="experience" class="section section-timeline">
-        <div class="container">
-          <div class="section-head">
-            <h2 class="section-title">Experience</h2>
+      <!-- 04 Path -->
+      <section class="section wrap" id="path" aria-labelledby="path-title">
+        <div class="section__inner">
+          <h2 class="section-title" id="path-title"><span class="section-title__num">04</span>Path</h2>
+          <div class="path__intro">
+            <p class="path__lede">I started as a consultant. Every role since has required something I hadn’t done before.</p>
+            <p class="path__sub">10+ years in technical and product roles.</p>
           </div>
           <ol class="timeline">
-            <li class="timeline-item">
-              <span class="timeline-dot"></span>
-              <div class="timeline-body">
-                <p class="timeline-meta">National Funding · Apr 2024 – Present</p>
-                <h3>Manager, Technical Product Management</h3>
-                <ul class="timeline-bullets">
-                  <li>Own product strategy for core lending and customer experience platforms supporting a <strong>$750M+</strong> portfolio across product, engineering, design, QA, risk, and ops.</li>
-                  <li>Drive API roadmap execution to improve underwriting throughput and operational efficiency; define KPIs and OKRs with executives tied to conversion, processing time, and portfolio outcomes.</li>
-                  <li>Relaunch broker acquisition—strategy for broker onboarding and merchant experience—and redesign credit decisioning infrastructure for scalable growth within loss constraints.</li>
-                  <li>Lead initiatives using Plaid bank data and behavioral signals for renewal targeting, re-engagement, and risk segmentation.</li>
-                </ul>
-              </div>
+            <li class="timeline__row timeline__row--current">
+              <span class="timeline__year">2024<svg class="timeline__circle" aria-hidden="true" focusable="false" viewBox="0 0 64 34"><path d="M33 3 C 14 2, 3 9, 4 18 C 5 28, 22 32, 38 31 C 53 30, 61 23, 60 15 C 59 7, 47 2, 30 4 C 24 5, 19 7, 17 9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" opacity="0.9"/></svg></span>
+              <span class="timeline__role"><span class="timeline__title">Manager, Technical Product Management</span><span class="timeline__company">National Funding</span></span>
+              <span class="timeline__note">Hired a team of 5; a broker channel from zero; a multi-agent LLM pipeline for the team</span>
             </li>
-            <li class="timeline-item">
-              <span class="timeline-dot"></span>
-              <div class="timeline-body">
-                <p class="timeline-meta">National Funding · Jan 2023 – Mar 2024</p>
-                <h3>Principal Technical Product Manager</h3>
-                <ul class="timeline-bullets">
-                  <li>Delivered external <strong>Partner API</strong> for real-time loan intake and data exchange—improving integration throughput and partner onboarding speed.</li>
-                  <li>Owned roadmap for consumer-facing <strong>merchant portal</strong>; adoption reached <strong>100%</strong> and cut end-to-end time to funding by <strong>50%</strong>.</li>
-                  <li>Partnered with underwriting, data science, and analytics on credit evaluation workflows; shipped improvements that reduced underwriting manual processing time by <strong>20%</strong>.</li>
-                </ul>
-              </div>
+            <li class="timeline__row">
+              <span class="timeline__year">2023</span>
+              <span class="timeline__role"><span class="timeline__title">Principal Technical Product Manager</span><span class="timeline__company">National Funding</span></span>
+              <span class="timeline__note">Partner API from zero; merchant portal, 50% faster to first funded loan, 100% adoption</span>
             </li>
-            <li class="timeline-item">
-              <span class="timeline-dot"></span>
-              <div class="timeline-body">
-                <p class="timeline-meta">National Funding · Jul 2021 – Dec 2022</p>
-                <h3>Technical Product Manager</h3>
-                <ul class="timeline-bullets">
-                  <li>Led <strong>Plaid</strong> integration for real-time bank data in onboarding—better conversion, fraud signals, and identity verification; helped lift application-to-funding conversion by <strong>25%</strong>.</li>
-                  <li>Governed and optimized <strong>three Salesforce orgs</strong>: architecture alignment, data strategy, scalability, and continuity via governance and environment management.</li>
-                  <li>Prioritized sales-technology initiatives across business units with security, compliance, and engineering.</li>
-                </ul>
-              </div>
+            <li class="timeline__row">
+              <span class="timeline__year">2021</span>
+              <span class="timeline__role"><span class="timeline__title">Technical Product Manager</span><span class="timeline__company">National Funding</span></span>
+              <span class="timeline__note">Plaid integration, +25% conversion; three Salesforce orgs into one</span>
             </li>
-            <li class="timeline-item">
-              <span class="timeline-dot"></span>
-              <div class="timeline-body">
-                <p class="timeline-meta">National Funding · Mar 2019 – Jun 2021</p>
-                <h3>Senior Salesforce Administrator</h3>
-                <ul class="timeline-bullets">
-                  <li>Designed scalable Salesforce architecture and documentation standards to reduce long-term technical debt.</li>
-                  <li>Built CI/CD with <strong>GitHub</strong> and <strong>Gearset</strong>; cut deployment errors by <strong>40%</strong> and improved release reliability.</li>
-                  <li>Translated business requirements into technical designs and shipped CRM enhancements aligned to platform best practices.</li>
-                </ul>
-              </div>
+            <li class="timeline__row">
+              <span class="timeline__year">2020</span>
+              <span class="timeline__role"><span class="timeline__title">Full-stack bootcamp</span><span class="timeline__company">UC San Diego</span></span>
+              <span class="timeline__note">JavaScript, Node, the web stack</span>
             </li>
-            <li class="timeline-item">
-              <span class="timeline-dot"></span>
-              <div class="timeline-body">
-                <p class="timeline-meta">Ambry Genetics · Aliso Viejo, CA · Apr 2018 – Feb 2019</p>
-                <h3>Salesforce Administrator</h3>
-                <ul class="timeline-bullets">
-                  <li>Administration for <strong>250+</strong> users across Sales and Service Cloud with strong uptime and process alignment.</li>
-                  <li>Bi-directional integrations between Salesforce and databases for reporting accuracy.</li>
-                  <li>Championed <strong>HIPAA</strong>-aligned data practices alongside growth.</li>
-                </ul>
-              </div>
+            <li class="timeline__row">
+              <span class="timeline__year">2019</span>
+              <span class="timeline__role"><span class="timeline__title">Senior Salesforce Administrator</span><span class="timeline__company">National Funding</span></span>
+              <span class="timeline__note">CI/CD across three environments, 40% fewer deployment errors</span>
             </li>
-            <li class="timeline-item">
-              <span class="timeline-dot"></span>
-              <div class="timeline-body">
-                <p class="timeline-meta">Ceridian · Virtual · Oct 2016 – Apr 2018</p>
-                <h3>Senior Business Analyst</h3>
-                <ul class="timeline-bullets">
-                  <li>Delivered Lightning and Salesforce1 solutions for mobile-first field teams.</li>
-                  <li>Primary liaison across <strong>45</strong> departments—requirements through technical delivery.</li>
-                </ul>
-              </div>
+            <li class="timeline__row">
+              <span class="timeline__year">2018</span>
+              <span class="timeline__role"><span class="timeline__title">Salesforce Administrator</span><span class="timeline__company">Ambry Genetics</span></span>
+              <span class="timeline__note">Integrations with patient-data systems under HIPAA, 250+ users</span>
             </li>
-            <li class="timeline-item">
-              <span class="timeline-dot"></span>
-              <div class="timeline-body">
-                <p class="timeline-meta">Clarus Designs · San Francisco, CA · Aug 2015 – Sep 2016</p>
-                <h3>Sales and Operations Analyst</h3>
-                <ul class="timeline-bullets">
-                  <li>Consulted with early-stage teams on operations, process design, and scalable technology adoption.</li>
-                </ul>
-              </div>
+            <li class="timeline__row">
+              <span class="timeline__year">2016</span>
+              <span class="timeline__role"><span class="timeline__title">Senior Business Analyst</span><span class="timeline__company">Ceridian</span></span>
+              <span class="timeline__note">First Salesforce builds, for field teams across 45 departments</span>
+            </li>
+            <li class="timeline__row">
+              <span class="timeline__year">2015</span>
+              <span class="timeline__role"><span class="timeline__title">Sales &amp; Operations Analyst</span><span class="timeline__company">Clarus Designs</span></span>
+              <span class="timeline__note">Re-engineered workflows for early-stage companies</span>
             </li>
           </ol>
-        </div>
-      </section>
-
-      <section id="skills" class="section section-skills">
-        <div class="container">
-          <div class="section-head">
-            <h2 class="section-title">Toolkit</h2>
-            <p class="section-sub">Product leadership backed by architecture, data, and shipping discipline.</p>
+          <div class="path__cta">
+            <a class="btn btn--primary" href="https://docs.google.com/document/d/e/2PACX-1vSrySJOaq8SuYeRH-K_3uF4G3KK_gRlw0_6EuYZO0PegL6YQ7afXb8db5gmuZ7FHSu0zb8z-pK59tql/pub">View full resume ↗</a>
           </div>
-          <div class="skill-groups">
-            <div class="skill-group">
-              <h3>Product</h3>
-              <ul class="skill-chips">
-                <li>Roadmapping &amp; OKRs</li>
-                <li>Experimentation / A/B testing</li>
-                <li>Funnel optimization</li>
-                <li>Executive communication</li>
-                <li>Cross-functional leadership</li>
-              </ul>
-            </div>
-            <div class="skill-group">
-              <h3>Architecture &amp; engineering</h3>
-              <ul class="skill-chips">
-                <li>APIs &amp; microservices</li>
-                <li>HTML, CSS, JavaScript</li>
-                <li>Node.js</li>
-                <li>SQL</li>
-                <li>AWS</li>
-                <li>GitHub</li>
-              </ul>
-            </div>
-            <div class="skill-group">
-              <h3>CRM &amp; platforms</h3>
-              <ul class="skill-chips">
-                <li>Salesforce (Sales, Service, Marketing Cloud)</li>
-                <li>Apex, SOQL &amp; SOSL</li>
-                <li>LWC</li>
-                <li>Flows &amp; automation</li>
-                <li>Gearset CI/CD</li>
-                <li>HubSpot</li>
-                <li>Plaid</li>
-                <li>Twilio</li>
-              </ul>
-            </div>
-          </div>
-
-          <div id="credentials" class="credentials-block">
-            <h3 class="credentials-title">Credentials &amp; education</h3>
-            <div class="credentials-grid">
-              <div class="credentials-column">
-                <h4 class="credentials-heading">Salesforce</h4>
-                <ul class="credentials-list">
-                  <li>Application Architect</li>
-                  <li>Data Architecture &amp; Management Designer</li>
-                  <li>Sharing &amp; Visibility Designer</li>
-                  <li>Salesforce Developer I</li>
-                  <li>Platform App Builder</li>
-                  <li>Administrator</li>
-                </ul>
-                <h4 class="credentials-heading">Product</h4>
-                <ul class="credentials-list">
-                  <li>Certified Scrum Product Owner (CSPO)</li>
-                </ul>
-              </div>
-              <div class="credentials-column">
-                <h4 class="credentials-heading">Education</h4>
-                <ul class="credentials-list">
-                  <li><strong>Full Stack Developer</strong> — UC San Diego Extension (Dec 2020)</li>
-                  <li><strong>B.A. Sociology, Law &amp; Society</strong> — UC Riverside (Jun 2014)</li>
-                </ul>
-                <h4 class="credentials-heading">Also fluent with</h4>
-                <p class="credentials-note">Jira, Confluence, Tableau, Google Analytics; Gainsight, Eloqua, Marketo, Five9, Apttus, Conga, Advologix, and related go-to-market tooling.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="contact" class="section section-contact">
-        <div class="container contact-inner">
-          <h2 class="section-title">Let’s talk</h2>
-          <p class="contact-lead">
-            Hiring for underwriting, lending platforms, or partner integrations—or need a TPM who can stand up Salesforce architecture and speak fluently with engineering and risk?
-          </p>
-          <div class="hero-actions contact-actions">
-            <a class="btn btn-primary" href="mailto:mhandler1991@gmail.com">mhandler1991@gmail.com</a>
-            <a class="btn btn-ghost" href="https://www.linkedin.com/in/handler1991/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          </div>
-          <p class="contact-location">San Diego, CA</p>
         </div>
       </section>
     </main>
 
-    <footer class="site-footer">
-      <div class="container footer-inner">
-        <p>© <span id="year"></span> Maxwell Handler · San Diego, CA</p>
-        <p class="footer-note">Built as a static site — fast, accessible, easy to evolve.</p>
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+      <div class="footer__inner wrap">
+        <div class="footer__head">
+          <h2 class="footer__title">Get in touch</h2>
+          <p class="footer__sub">Happy to talk product, AI workflows, or anything above.</p>
+        </div>
+        <nav class="footer__buttons" aria-label="Contact links">
+          <a class="btn btn--primary" href="https://docs.google.com/document/d/e/2PACX-1vSrySJOaq8SuYeRH-K_3uF4G3KK_gRlw0_6EuYZO0PegL6YQ7afXb8db5gmuZ7FHSu0zb8z-pK59tql/pub">Resume <span aria-hidden="true">↗</span></a>
+          <a class="btn btn--secondary" href="https://linkedin.com/in/handler1991/">LinkedIn <span aria-hidden="true">↗</span></a>
+          <a class="btn btn--secondary" href="https://github.com/mhandler1991">GitHub <span aria-hidden="true">↗</span></a>
+          <a class="btn btn--secondary" href="mailto:Mhandler1991@gmail.com">Email <span aria-hidden="true">→</span></a>
+        </nav>
+        <p class="footer__line"><a href="mailto:Mhandler1991@gmail.com">Mhandler1991@gmail.com</a><span class="footer__sep" aria-hidden="true">·</span><span>San Diego, CA</span></p>
+        <div class="footer__bottom">
+          <span>Built with Claude Code, using the workflows above.</span>
+          <span>© 2026 Maxwell Handler</span>
+        </div>
       </div>
     </footer>
 
-    <script src="js/scripts.js" defer></script>
+    <script src="js/home.js" defer></script>
   </body>
 </html>

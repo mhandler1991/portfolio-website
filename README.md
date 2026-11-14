@@ -1,6 +1,6 @@
 # maxwellhandler.com
 
-Personal portfolio site for **Maxwell Handler** — Senior Technical Product Manager working at the intersection of fintech platforms, APIs, and Salesforce architecture.
+Personal site for **Maxwell Handler**, product manager in San Diego. I run a technical product team in fintech lending, and I build software with Claude.
 
 - 🌐 **Production:** [maxwellhandler.com](https://maxwellhandler.com) — `main` branch via GitHub Pages
 - 🧪 **Staging:** [maxwellhandler.netlify.app](https://maxwellhandler.netlify.app/) — `stage` branch via Netlify
@@ -9,8 +9,8 @@ Personal portfolio site for **Maxwell Handler** — Senior Technical Product Man
 
 ## Stack
 
-- Static **HTML / CSS / vanilla JS** — no build step, no framework
-- Google Fonts: **DM Sans** + **Fraunces** (loaded with `preconnect`)
+- Static **HTML / CSS / vanilla JS**, no build step, no framework
+- Self-hosted fonts: **Geist**, **Geist Mono** and **Caveat** (woff2, OFL, in `assets/fonts/`)
 - Hosted on **GitHub Pages** with custom domain via [`CNAME`](CNAME)
 
 ## Project structure
@@ -19,11 +19,14 @@ Personal portfolio site for **Maxwell Handler** — Senior Technical Product Man
 .
 ├── assets/
 │   ├── favicon.svg      # SVG favicon
-│   └── profile.jpg      # Hero portrait
+│   ├── profile.jpg      # Open Graph / Twitter preview image
+│   └── fonts/           # Geist, Geist Mono, Caveat (woff2) + licenses
 ├── css/
-│   └── styles.css       # Design tokens, sections, animations
+│   ├── tokens.css       # Design tokens and global rules
+│   └── home.css         # Homepage layout and components
 ├── js/
-│   └── scripts.js       # Mobile nav, year stamp, hero-tags marquee
+│   └── home.js          # Workflow step animation, phone menu
+├── archive/             # Previous homepage and AI Lab page (noindex)
 ├── index.html           # Single-page entry
 ├── CNAME                # GitHub Pages custom domain
 └── README.md
@@ -44,12 +47,10 @@ Workflow: push to `stage` → preview on Netlify → merge `stage` → `main` to
 
 ## Notes
 
-- Respects `prefers-reduced-motion` (decorative animations and marquee disabled)
-- Mobile-friendly: viewport `viewport-fit=cover`, safe-area insets, 44px tap targets
-- `:focus-visible` outlines for keyboard navigation
+- Respects `prefers-reduced-motion` (step animation and smooth scroll off)
+- 44px tap areas on links, 48px buttons, visible `:focus-visible` rings
+- Placeholder links render as a muted "Soon" tag; search `TODO` in `index.html` for what is still missing
 - Open Graph + Twitter Card metadata for link previews
-- SVG favicon — no PNG fallback needed in modern browsers
-- Single-page layout: hero, about, what I do, experience timeline, skills, credentials, contact
 
 ## License
 
