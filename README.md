@@ -45,16 +45,23 @@ Layout breakpoints: 640px (compact top bar and menu) and 500px (Journey rows and
 ```
 .
 ├── index.html                 # The homepage
+├── favicon.ico                # Icon set: 16, 32 and 48px fallback
+├── favicon.svg                # Icon set: scalable tab icon
+├── favicon-32.png             # Icon set: explicit 32px PNG
+├── apple-touch-icon.png       # Icon set: iOS home screen (180px)
+├── icon-192.png               # Icon set: Android, via the manifest
+├── icon-512.png               # Icon set: Android, via the manifest
+├── site.webmanifest           # Points Android at the two icons
 ├── css/
 │   ├── tokens.css             # Design tokens and global rules
 │   └── home.css               # Fonts, layout and components
 ├── js/
 │   └── home.js                # Step animation and phone menu
 ├── assets/
-│   ├── favicon.svg
 │   ├── profile.jpg            # Link-preview image (Open Graph, Twitter)
 │   └── fonts/                 # Geist, Geist Mono, Caveat (woff2) + OFL licenses
 ├── archive/                   # Previous site, kept for reference (noindex)
+│   ├── favicon.svg            # Old icon, used by the archived pages
 │   ├── index.html             # Old homepage
 │   ├── ai/index.html          # Old AI Lab page
 │   ├── css/styles.css
