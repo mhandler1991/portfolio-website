@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>How I built this site · Maxwell Handler</title>
+    <meta name="description" content="Four months of attempts that didn’t stick, then one afternoon once the content was right. How Maxwell Handler built this site.">
+    <meta name="theme-color" content="#FFFFFF">
+    <link rel="canonical" href="https://maxwellhandler.com/how-i-built-this/">
+    <link rel="icon" href="/favicon.ico" sizes="48x48">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://maxwellhandler.com/how-i-built-this/">
+    <meta property="og:title" content="How I built this site · Maxwell Handler">
+    <meta property="og:description" content="Four months of attempts that didn’t stick, then one afternoon once the content was right. How Maxwell Handler built this site.">
+    <meta property="og:image" content="https://maxwellhandler.com/assets/profile.jpg">
+    <meta property="og:image:alt" content="Portrait of Maxwell Handler">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="How I built this site · Maxwell Handler">
+    <meta name="twitter:description" content="Four months of attempts that didn’t stick, then one afternoon once the content was right. How Maxwell Handler built this site.">
+    <meta name="twitter:image" content="https://maxwellhandler.com/assets/profile.jpg">
+
+    <link rel="preload" href="/assets/fonts/Geist-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/Geist-Medium.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/css/tokens.css">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/build-log.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- Top bar: the homepage's, with links back to its sections -->
+    <header class="topbar">
+      <nav class="topbar__nav wrap" aria-label="Primary">
+        <a class="topbar__name" href="/"><svg class="topbar__mark" viewBox="5.5 5 21.5 22" aria-hidden="true" focusable="false"><path class="topbar__mark-letter" d="M9.21 20.5V7.5H12.41L16 17.57L19.59 7.5H22.79V20.5H20.41V11.53L17.14 20.48H14.86L11.59 11.53V20.5Z"/><path class="topbar__mark-line" d="M7 25.2 C 12 23.8, 18 24.8, 25.5 23.6" fill="none" stroke-width="2.4" stroke-linecap="round"/></svg><span>Maxwell Handler</span></a>
+        <div class="topbar__right">
+          <div class="nav-sections">
+            <a href="/#how-i-work">How I work</a>
+            <a href="/#builds">Builds</a>
+            <a href="/#experiments">Experiments</a>
+            <a href="/#journey">Journey</a>
+            <a href="/#contact">Contact</a>
+          </div>
+          <a class="topbar__resume" href="https://docs.google.com/document/d/e/2PACX-1vSrySJOaq8SuYeRH-K_3uF4G3KK_gRlw0_6EuYZO0PegL6YQ7afXb8db5gmuZ7FHSu0zb8z-pK59tql/pub" target="_blank" rel="noopener noreferrer">Resume ↗</a>
+          <button type="button" class="btn btn--secondary menu-btn" id="menu-btn" aria-expanded="false" aria-controls="menu-panel">Menu</button>
+        </div>
+      </nav>
+      <nav class="menu-panel" id="menu-panel" aria-label="Sections">
+        <a href="/#how-i-work">How I work</a>
+        <a href="/#builds">Builds</a>
+        <a href="/#experiments">Experiments</a>
+        <a href="/#journey">Journey</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <!-- Header -->
+      <div class="intro wrap">
+        <a class="link-sm log-back" href="/">← Back to the homepage</a>
+        <h1 class="intro__name">How I built this site</h1>
+        <p class="log-lede">Four months of attempts that didn’t stick, then <mark>one afternoon once the content was right</mark>. This is the whole process, including the parts that didn’t work.</p>
+        <p class="log-credit"><span class="pencil-under">I made the calls<svg class="pencil-under__line" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M1 6 C 25 3.5, 60 7, 99 4"/></svg></span>: what the site is for, what it says, what stays and what goes. Claude was the tool I worked with: it drafted, mocked, reviewed and packaged changes, and Claude Code shipped them. This page is written from my working sessions.</p>
+        <ul class="stats">
+          <li class="stats__item"><span class="stats__num">&lt; 6 hrs</span><span class="label">first real draft to live site</span></li>
+          <li class="stats__item"><span class="stats__num">15</span><span class="label">homepage versions in one day</span></li>
+          <li class="stats__item"><span class="stats__num">10</span><span class="label">visual directions, 9 rejected</span></li>
+          <li class="stats__item"><span class="stats__num">6</span><span class="label">handoff kits to Claude Code</span></li>
+        </ul>
+        <p class="log-dated">Four months of on-and-off attempts. Then one day, Nov 13: v1 at 10:50 a.m., twelve versions by 12:30, live that afternoon. <a href="https://github.com/mhandler1991/portfolio-website" target="_blank" rel="noopener noreferrer">Every change since is public on GitHub ↗</a></p>
+      </div>
+
+      <!-- 01 Where it started -->
+      <section class="section wrap" id="start" aria-labelledby="start-title">
+        <div class="section__inner">
+          <h2 class="section-title" id="start-title"><span class="section-title__num">01</span>Where it started</h2>
+          <p class="log-text">The site has lived on GitHub since May 2025. In May 2026 I rebuilt it in an evening with Claude Code: the first pull request merged at 6:24 p.m., and four more landed within a day, through a staging branch into production. Then I turned it into an experiment: a PM agent that compared the site to others and wrote a PRD, an engineer agent that built it, and a QA agent that checked the code against the PRD.</p>
+          <p class="log-text log-text--s">The pipeline worked. The site didn’t say much. It was a dark page that mostly repeated my resume, and nothing on it showed how I actually work.</p>
+        </div>
+      </section>
+
+      <!-- 02 Ten looks before this one -->
+      <section class="section wrap" id="directions" aria-labelledby="directions-title">
+        <div class="section__inner">
+          <h2 class="section-title" id="directions-title"><span class="section-title__num">02</span>Ten looks before this one</h2>
+          <p class="log-intro">In July I asked Claude to grill me until we had a plan, then reacted to mockups. Each round fixed the last complaint and found a new one.</p>
+          <ul class="directions">
+            <li class="direction">
+              <div class="direction__swatch" aria-hidden="true"><img src="/assets/build-log/swatch-warm-editorial.webp" alt="" width="448" height="226" loading="lazy"></div>
+              <div class="direction__body"><span class="direction__date">July</span><span class="direction__name"><span class="sr-only">Rejected: </span><span class="intro__strike">Warm editorial<svg class="intro__strike-line" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path pathLength="1" d="M1 6 C 28 3.8, 62 6.6, 99 4.2"/></svg></span></span><span class="direction__text">Paper tones, a serif, sage green. The most common AI-made portfolio look there is.</span></div>
+            </li>
+            <li class="direction">
+              <div class="direction__swatch direction__swatch--empty" aria-hidden="true"><span>No screenshot kept</span></div>
+              <div class="direction__body"><span class="direction__date">July</span><span class="direction__name"><span class="sr-only">Rejected: </span><span class="intro__strike">Thread<svg class="intro__strike-line" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path pathLength="1" d="M1 6 C 28 3.8, 62 6.6, 99 4.2"/></svg></span></span><span class="direction__text">An early direction. Not picked.</span></div>
+            </li>
+            <li class="direction">
+              <div class="direction__swatch" aria-hidden="true"><img src="/assets/build-log/swatch-ledger.webp" alt="" width="446" height="226" loading="lazy"></div>
+              <div class="direction__body"><span class="direction__date">July</span><span class="direction__name"><span class="sr-only">Rejected: </span><span class="intro__strike">Ledger<svg class="intro__strike-line" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path pathLength="1" d="M1 6 C 28 3.8, 62 6.6, 99 4.2"/></svg></span></span><span class="direction__text">The site as a bank ledger. My favorite of the first three.</span></div>
+            </li>
+            <li class="direction">
+              <div class="direction__swatch direction__swatch--empty" aria-hidden="true"><span>No screenshot kept</span></div>
+              <div class="direction__body"><span class="direction__date">July</span><span class="direction__name"><span class="sr-only">Rejected: </span><span class="intro__strike">Schematic<svg class="intro__strike-line" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path pathLength="1" d="M1 6 C 28 3.8, 62 6.6, 99 4.2"/></svg></span></span><span class="direction__text">Bold, but leaned engineer over product manager.</span></div>
+            </li>
+            <li class="direction">
+              <div class="direction__swatch" aria-hidden="true"><img src="/assets/build-log/swatch-ledger-v2.webp" alt="" width="448" height="226" loading="lazy"></div>
+              <div class="direction__body"><span class="direction__date">July</span><span class="direction__name"><span class="sr-only">Rejected: </span><span class="intro__strike">Ledger v2<svg class="intro__strike-line" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path pathLength="1" d="M1 6 C 28 3.8, 62 6.6, 99 4.2"/></svg></span></span><span class="direction__text">Aged paper, typewriter fills, folio numbers. A costume.</span></div>
+            </li>
+            <li class="direction">
+              <div class="direction__swatch" aria-hidden="true"><img src="/assets/build-log/swatch-visual-first-v4.webp" alt="" width="446" height="226" loading="lazy"></div>
+              <div class="direction__body"><span class="direction__date">July</span><span class="direction__name"><span class="sr-only">Rejected: </span><span class="intro__strike">Visual-first v4<svg class="intro__strike-line" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path pathLength="1" d="M1 6 C 28 3.8, 62 6.6, 99 4.2"/></svg></span></span><span class="direction__text">Big type, diagrams as art. Still the same sage green underneath.</span></div>
+            </li>
+            <li class="direction">
+              <div class="direction__swatch" aria-hidden="true"><img src="/assets/build-log/swatch-midnight-index.webp" alt="" width="446" height="226" loading="lazy"></div>
+              <div class="direction__body"><span class="direction__date">July</span><span class="direction__name"><span class="sr-only">Rejected: </span><span class="intro__strike">Midnight Index<svg class="intro__strike-line" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path pathLength="1" d="M1 6 C 28 3.8, 62 6.6, 99 4.2"/></svg></span></span><span class="direction__text">Near-black, huge numbers, amber. Lost to Color Field.</span></div>
+            </li>
+            <li class="direction">
+              <div class="direction__swatch" aria-hidden="true"><img src="/assets/build-log/swatch-color-field.webp" alt="" width="448" height="226" loading="lazy"></div>
+              <div class="direction__body"><span class="direction__date">July → November</span><span class="direction__name"><span class="sr-only">Rejected: </span><span class="intro__strike">Color Field, cobalt<svg class="intro__strike-line" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path pathLength="1" d="M1 6 C 28 3.8, 62 6.6, 99 4.2"/></svg></span></span><span class="direction__text">Chosen and fully specced. Outgrown once the story moved to building.</span></div>
+            </li>
+            <li class="direction">
+              <div class="direction__swatch" aria-hidden="true"><img src="/assets/build-log/swatch-lab-notebook.webp" alt="" width="448" height="226" loading="lazy"></div>
+              <div class="direction__body"><span class="direction__date">November</span><span class="direction__name"><span class="sr-only">Rejected: </span><span class="intro__strike">Lab notebook<svg class="intro__strike-line" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path pathLength="1" d="M1 6 C 28 3.8, 62 6.6, 99 4.2"/></svg></span></span><span class="direction__text">Cream, a serif, red pencil. Still looked AI-made.</span></div>
+            </li>
+            <li class="direction direction--chosen">
+              <div class="direction__swatch direction__swatch--live" aria-hidden="true"><span class="direction__mini-bar"><svg class="direction__mini-mark topbar__mark" viewBox="5.5 5 21.5 22" focusable="false"><path class="topbar__mark-letter" d="M9.21 20.5V7.5H12.41L16 17.57L19.59 7.5H22.79V20.5H20.41V11.53L17.14 20.48H14.86L11.59 11.53V20.5Z"/><path class="topbar__mark-line" d="M7 25.2 C 12 23.8, 18 24.8, 25.5 23.6" fill="none" stroke-width="2.4" stroke-linecap="round"/></svg>Maxwell Handler</span><span class="direction__mini-name">Maxwell Handler</span></div>
+              <div class="direction__body"><span class="direction__date">November</span><span class="direction__name">Plain page, real artifacts</span><span class="direction__text">White page, one accent, and a few pencil marks on real content. This one.</span></div>
+              <span class="try__text" aria-hidden="true">this one!</span>
+            </li>
+          </ul>
+          <p class="log-text log-text--l">Every direction got the same reaction eventually: it looked generated. Some were tasteful, some were bold, one was a costume. <mark>None of them were wrong because of a color or a font.</mark></p>
+          <figure class="quote">
+            <blockquote>“We’ve had a few conversations on a personal portfolio website and haven’t come up with a good format, wireframe or design. Review all of them, consolidate the directions, and from there I want to work toward a solid plan.”</blockquote>
+            <figcaption class="label">Me, Nov 13, 10 a.m. The message that started the build</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- 03 Content first, design last -->
+      <section class="section wrap" id="diagnosis" aria-labelledby="diagnosis-title">
+        <div class="section__inner">
+          <h2 class="section-title" id="diagnosis-title"><span class="section-title__num">03</span>Content first, design last</h2>
+          <p class="log-intro">In November I went back through every conversation about the site and asked Claude to consolidate them. The pattern was obvious once it was written down.</p>
+          <h3 class="label log-label">Why nothing stuck</h3>
+          <ol class="labeled labeled--closed">
+            <li class="labeled__row"><span class="labeled__key labeled__key--version">1</span><span class="labeled__val"><strong>Designing before there was content.</strong> Every mockup was filled with placeholder copy. Generic words in a generated layout read as generated, whatever the palette.</span></li>
+            <li class="labeled__row"><span class="labeled__key labeled__key--version">2</span><span class="labeled__val"><strong>The story kept moving.</strong> It shifted from “fintech PM” to “AI-forward PM” to “builder,” and each shift made the last design wrong.</span></li>
+            <li class="labeled__row"><span class="labeled__key labeled__key--version">3</span><span class="labeled__val"><strong>The only goal was a negative one.</strong> “Doesn’t look AI-made” is a list of things to avoid. <mark>You can’t converge on a list of things to avoid.</mark></span></li>
+          </ol>
+          <h3 class="label log-label">The plan</h3>
+          <ol class="labeled labeled--closed">
+            <li class="labeled__row"><span class="labeled__key labeled__key--version">Step 1</span><span class="labeled__val">Lock three decisions: the site’s job, the direction, and how much of my day job to show.</span></li>
+            <li class="labeled__row"><span class="labeled__key labeled__key--version">Step 2</span><span class="labeled__val">Inventory real artifacts: what I’ve built, and what proof exists for each (repo, live link, screenshot).</span></li>
+            <li class="labeled__row"><span class="labeled__key labeled__key--version">Step 3</span><span class="labeled__val">Write every word in plain text, with no design at all.</span></li>
+            <li class="labeled__row"><span class="labeled__key labeled__key--version">Step 4</span><span class="labeled__val">Design around the finished text. One mockup, not three.</span></li>
+          </ol>
+          <figure class="quote">
+            <blockquote>“I’m not sure I like the idea of ‘writing the spec last,’ because I don’t think that’s true. The work I did with Claude is the spec in a lot of ways.”</blockquote>
+            <figcaption class="label">Me, rewriting the thesis</figcaption>
+          </figure>
+          <p class="log-text">That pushback became the line at the top of How I work: <mark><strong>I build proofs of concept before PRDs.</strong></mark> The prototype, and the conversation that built it, is the spec.</p>
+        </div>
+      </section>
+
+      <!-- 04 Real facts only -->
+      <section class="section wrap" id="sources" aria-labelledby="sources-title">
+        <div class="section__inner">
+          <h2 class="section-title" id="sources-title"><span class="section-title__num">04</span>Real facts only</h2>
+          <p class="log-intro">Before any design, every fact on the page needed a source.</p>
+          <ol class="labeled labeled--closed">
+            <li class="labeled__row"><span class="labeled__key labeled__key--version">GitHub</span><span class="labeled__val">Pulled the commit history of every public repo and the private Tempus log. Commit counts, dates, merged PRs and issue numbers on this site come from there.</span></li>
+            <li class="labeled__row"><span class="labeled__key labeled__key--version">Resume</span><span class="labeled__val">Career dates, titles and outcomes come from my master resume, word for word where possible.</span></li>
+            <li class="labeled__row"><span class="labeled__key labeled__key--version">Sessions</span><span class="labeled__val">Process notes, wins and losses come from the working sessions where each thing was built, not from memory.</span></li>
+          </ol>
+          <p class="log-text log-text--m">The rule: if a number or a claim can’t be traced to one of those three, <mark>it doesn’t go on the page</mark>. A few things I wanted to say came out because I couldn’t source them.</p>
+        </div>
+      </section>
+
+      <!-- 05 Fifteen versions in one day -->
+      <section class="section wrap" id="versions" aria-labelledby="versions-title">
+        <div class="section__inner">
+          <h2 class="section-title" id="versions-title"><span class="section-title__num">05</span>Fifteen versions in one day</h2>
+          <p class="log-intro">Friday, Nov 13. Every version lived on a design canvas next to the last one, so I could compare instead of remember. Twelve of the fifteen <span class="pencil-under">happened before lunch<svg class="pencil-under__line" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M1 6 C 25 3.5, 60 7, 99 4"/></svg></span>.</p>
+          <ol class="labeled labeled--closed">
+            <li class="labeled__row"><span class="labeled__key labeled__key--version">v1</span><span class="labeled__val">Plain draft built from real content and real commit data.</span></li>
+            <li class="labeled__row"><span class="labeled__key labeled__key--version">v2</span><span class="labeled__val">Less plain: bigger hero, How I work as a black band, Worked and Didn’t on every build.</span></li>
+            <li class="labeled__row"><span class="labeled__key labeled__key--version">v3</span><span class="labeled__val">Black band removed (it broke the page). Thesis became “I build proofs of concept before PRDs.”</span></li>
+            <li class="labeled__row"><span class="labeled__key labeled__key--version">v4</span><span class="labeled__val">Footer, bigger section headers, the step highlight animation.</span></li>
+            <li class="labeled__row"><span class="labeled__key labeled__key--version">v5</span><span class="labeled__val">Top bar, the red pencil underline, wider side margins.</span></li>
+            <li class="labeled__row"><span class="labeled__key labeled__key--version">v6</span><span class="labeled__val">Hand-drawn marks: pencil circle, highlighter, the “try it!” note.</span></li>
+            <li class="labeled__row"><span class="labeled__key labeled__key--version">v7</span><span class="labeled__val">One button system for the whole page. I didn’t like it; reverted the same hour.</span></li>
+            <li class="labeled__row"><span class="labeled__key labeled__key--version">v8</span><span class="labeled__val">Design critique found the Builds layout breaking at desktop width. Fixed; one red; 12px labels.</span></li>
+            <li class="labeled__row"><span class="labeled__key labeled__key--version">v9</span><span class="labeled__val">Equal button heights, 64px section rhythm, 44px tap targets, screen-reader fixes.</span></li>
+            <li class="labeled__row"><span class="labeled__key labeled__key--version">v10</span><span class="labeled__val">Non-sticky top bar, a phone menu, the animation stops after two cycles.</span></li>
+            <li class="labeled__row"><span class="labeled__key labeled__key--version">v11</span><span class="labeled__val">Design-system audit: named tokens, hover and focus states, merged duplicate components.</span></li>
+            <li class="labeled__row"><span class="labeled__key labeled__key--version">v12</span><span class="labeled__val">Design elevation pass: warmer neutrals, a lighter weight for my name.</span></li>
+            <li class="labeled__row"><span class="labeled__key labeled__key--version">v13</span><span class="labeled__val">Rewrote one Builds entry to describe the tool, not its purpose.</span></li>
+            <li class="labeled__row"><span class="labeled__key labeled__key--version">v14</span><span class="labeled__val">Journey: “2024 → now”, a live dot, and “More to come!”</span></li>
+            <li class="labeled__row"><span class="labeled__key labeled__key--version labeled__key--current">v15</span><span class="labeled__val">The pencil arrow’s gap tuned from 18px to 9px.</span></li>
+          </ol>
+          <figure class="quote">
+            <blockquote>“I don’t like the button changes. Can we revert them?”</blockquote>
+            <figcaption class="label">Me, on v7</figcaption>
+          </figure>
+          <p class="log-text">Not every round was an improvement. Being able to see a change, <mark>say no and get the last version back in minutes</mark> is most of why this went fast.</p>
+        </div>
+      </section>
+
+      <!-- 06 On the canvas -->
+      <section class="section wrap" id="canvas" aria-labelledby="canvas-title">
+        <div class="section__inner">
+          <h2 class="section-title" id="canvas-title"><span class="section-title__num">06</span>On the canvas</h2>
+          <p class="log-intro">Every option was mocked side by side before I picked one. These are the real sheets, <span class="pencil-under">not recreations<svg class="pencil-under__line" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M1 6 C 25 3.5, 60 7, 99 4"/></svg></span>.</p>
+          <figure class="shot">
+            <a class="shot__link" href="/assets/build-log/canvas.webp" target="_blank" rel="noopener noreferrer" aria-label="Zoomed-out view of the design canvas: the homepage and six option sheets side by side (opens full size)"><img class="shot__img" src="/assets/build-log/canvas.webp" alt="Zoomed-out view of the design canvas: the homepage and six option sheets side by side" width="2263" height="774" loading="lazy"></a>
+            <figcaption class="shot__caption"><span class="shot__title">The canvas, zoomed out</span><span class="shot__text">The homepage on the left, then every option sheet I compared before deciding. Nothing got decided from memory.</span></figcaption>
+          </figure>
+          <div class="shots">
+            <figure class="shot">
+              <a class="shot__link" href="/assets/build-log/journey-current.webp" target="_blank" rel="noopener noreferrer" aria-label="Three options for marking the current role in Journey: a Current tag, 2024 to now, and a live dot (opens full size)"><img class="shot__img" src="/assets/build-log/journey-current.webp" alt="Three options for marking the current role in Journey: a Current tag, 2024 to now, and a live dot" width="1280" height="1577" loading="lazy"></a>
+              <figcaption class="shot__caption"><span class="shot__title">Journey: marking the current role</span><span class="shot__text">Three ways to say “still here.” I took B’s “2024 → now” and C’s live dot, and dropped the rest.</span></figcaption>
+            </figure>
+            <figure class="shot">
+              <a class="shot__link" href="/assets/build-log/journey-next.webp" target="_blank" rel="noopener noreferrer" aria-label="Three options above the Journey timeline: a pencil arrow with a note, a fade out, and an empty row (opens full size)"><img class="shot__img" src="/assets/build-log/journey-next.webp" alt="Three options above the Journey timeline: a pencil arrow with a note, a fade out, and an empty row" width="1280" height="1520" loading="lazy"></a>
+              <figcaption class="shot__caption"><span class="shot__title">Journey: what’s next</span><span class="shot__text">Picked A, the pencil arrow, and rewrote its note as “More to come! Still learning… Still building…”</span></figcaption>
+            </figure>
+            <figure class="shot">
+              <a class="shot__link" href="/assets/build-log/favicons.webp" target="_blank" rel="noopener noreferrer" aria-label="Five favicon options shown at 16 to 128 pixels and in light and dark browser tabs (opens full size)"><img class="shot__img" src="/assets/build-log/favicons.webp" alt="Five favicon options shown at 16 to 128 pixels and in light and dark browser tabs" width="1280" height="1557" loading="lazy"></a>
+              <figcaption class="shot__caption"><span class="shot__title">Favicons, at real size</span><span class="shot__text">Judged at 16px in a browser tab, where favicons live. I went back and forth between C and E, then chose E.</span></figcaption>
+            </figure>
+            <figure class="shot">
+              <a class="shot__link" href="/assets/build-log/brand-mark.webp" target="_blank" rel="noopener noreferrer" aria-label="Top bar options: name only, the favicon tile, and the bare mark beside the name (opens full size)"><img class="shot__img" src="/assets/build-log/brand-mark.webp" alt="Top bar options: name only, the favicon tile, and the bare mark beside the name" width="1280" height="1060" loading="lazy"></a>
+              <figcaption class="shot__caption"><span class="shot__title">The mark in the top bar</span><span class="shot__text">The bare mark won over the bordered tile, which read like an app icon.</span></figcaption>
+            </figure>
+            <figure class="shot">
+              <a class="shot__link" href="/assets/build-log/links-buttons.webp" target="_blank" rel="noopener noreferrer" aria-label="A side-by-side sheet comparing current and proposed button sizes and link styles (opens full size)"><img class="shot__img" src="/assets/build-log/links-buttons.webp" alt="A side-by-side sheet comparing current and proposed button sizes and link styles" width="1280" height="1156" loading="lazy"></a>
+              <figcaption class="shot__caption"><span class="shot__title">Links and buttons</span><span class="shot__text">The proposal I kept, right after the button system I reverted.</span></figcaption>
+            </figure>
+            <figure class="shot">
+              <a class="shot__link" href="/assets/build-log/intro-frames.webp" target="_blank" rel="noopener noreferrer" aria-label="Three frames of the intro line: as printed, mid-edit, and fully marked up (opens full size)"><img class="shot__img" src="/assets/build-log/intro-frames.webp" alt="Three frames of the intro line: as printed, mid-edit, and fully marked up" width="1280" height="300" loading="lazy"></a>
+              <figcaption class="shot__caption"><span class="shot__title">The intro, frame by frame</span><span class="shot__text">Start, middle and end of the line that edits itself on the homepage.</span></figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer: the homepage's -->
+    <footer class="footer" id="contact">
+      <div class="footer__inner wrap">
+        <div class="footer__head">
+          <h2 class="footer__title">Get in touch</h2>
+          <p class="footer__sub">Happy to talk product, AI workflows, or anything above.</p>
+        </div>
+        <nav class="footer__buttons" aria-label="Contact links">
+          <a class="btn btn--primary" href="https://docs.google.com/document/d/e/2PACX-1vSrySJOaq8SuYeRH-K_3uF4G3KK_gRlw0_6EuYZO0PegL6YQ7afXb8db5gmuZ7FHSu0zb8z-pK59tql/pub" target="_blank" rel="noopener noreferrer">Resume <span aria-hidden="true">↗</span></a>
+          <a class="btn btn--secondary" href="https://linkedin.com/in/handler1991/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+          <a class="btn btn--secondary" href="https://github.com/mhandler1991" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+          <a class="btn btn--secondary" href="mailto:Mhandler1991@gmail.com">Email <span aria-hidden="true">→</span></a>
+        </nav>
+        <p class="footer__line"><a href="mailto:Mhandler1991@gmail.com">Mhandler1991@gmail.com</a><span class="footer__sep" aria-hidden="true">·</span><span>San Diego, CA</span></p>
+        <div class="footer__bottom">
+          <span>I built this with support from Claude Code, using the workflows above.</span>
+          <span>© 2026 Maxwell Handler</span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Phone menu only; its intro-edit and step parts find nothing here and stop -->
+    <script src="/js/home.js" defer></script>
+  </body>
+</html>

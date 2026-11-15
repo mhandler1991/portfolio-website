@@ -1,0 +1,82 @@
+/*
+ * maxwellhandler.com build log (/how-i-built-this/)
+ * Only what the homepage doesn't have. The top bar, sections, labeled lists, highlighter,
+ * graphite strike (.intro__strike), "try it!"-style note, buttons and footer come from
+ * home.css; every value comes from tokens.css.
+ */
+
+/* Header */
+.log-back { align-self: flex-start; }
+.log-lede { max-width: 720px; font-size: var(--text-22); line-height: var(--leading-lede); }
+.log-credit { max-width: 720px; font-size: var(--text-16); line-height: var(--leading-body); color: var(--ink-soft); }
+.stats {
+  list-style: none; padding: var(--space-6) 0 0; border-top: 1px solid var(--rule);
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr)); gap: var(--space-5);
+}
+.stats__item { display: flex; flex-direction: column; gap: var(--space-1); }
+.stats__num { font-size: var(--text-44); font-weight: 600; letter-spacing: var(--tracking-3); line-height: var(--leading-tight); }
+.log-dated { font-family: var(--font-mono); font-size: var(--text-13); line-height: var(--leading-body); color: var(--muted); }
+
+/* Section text. Block flow, so a paragraph's top margin and the one above it collapse. */
+.log-intro {
+  margin-bottom: 40px; max-width: 680px;
+  font-size: var(--text-19); line-height: var(--leading-body); color: var(--ink-soft);
+}
+.log-text { max-width: 680px; font-size: var(--text-16); line-height: var(--leading-body); color: var(--ink-soft); }
+.log-text--s { margin-top: var(--space-4); }
+.log-text--m { margin-top: var(--space-5); }
+.log-text--l { margin-top: 40px; }
+.log-label { margin: 40px 0 var(--space-4); }
+.labeled--closed { border-bottom: 1px solid var(--rule); }
+.labeled__val strong { font-weight: 600; }
+
+/* Short red pencil underline (one line, never wraps) */
+.pencil-under { position: relative; display: inline-block; white-space: nowrap; }
+.pencil-under__line { position: absolute; left: -2px; bottom: -6px; width: calc(100% + 4px); height: 8px; overflow: visible; }
+.pencil-under__line path { fill: none; stroke: var(--pencil); stroke-width: var(--stroke-main); stroke-linecap: round; }
+
+/* Quotes */
+.quote { margin: 40px 0; max-width: 760px; display: flex; flex-direction: column; gap: var(--space-3); }
+.quote blockquote {
+  margin: 0; font-size: var(--text-28); font-weight: 500; line-height: var(--leading-lede); letter-spacing: var(--tracking-2);
+}
+
+/* 02 Ten looks: direction cards */
+.directions {
+  list-style: none; padding: 0;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(min(220px, 100%), 1fr)); gap: var(--space-4);
+}
+.direction {
+  position: relative; display: flex; flex-direction: column; gap: var(--space-3); padding: var(--space-4);
+  border: 1px solid var(--rule); border-radius: var(--radius-m);
+}
+.direction--chosen { border-color: var(--ink); }
+.direction__swatch { height: 112px; border-radius: var(--radius-s); overflow: hidden; }
+.direction__swatch img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.direction__swatch--empty,
+.direction__swatch--live {
+  display: flex; flex-direction: column; justify-content: space-between; padding: var(--space-3) var(--space-4);
+}
+.direction__swatch--empty { background: var(--paper-alt); font-family: var(--font-mono); font-size: var(--text-12); color: var(--muted); }
+.direction__swatch--live { background: var(--paper); border: 1px solid var(--rule); }
+.direction__mini-bar { display: flex; align-items: center; gap: var(--space-2); font-size: var(--text-13); font-weight: 600; }
+.direction__mini-mark { display: block; flex: none; width: 18px; height: 18px; }
+.direction__mini-name { font-size: var(--text-24); font-weight: 500; letter-spacing: var(--tracking-3); }
+.direction__body { display: flex; flex-direction: column; gap: var(--space-1); }
+.direction__date { font-family: var(--font-mono); font-size: var(--text-12); color: var(--muted); }
+.direction__name { font-size: var(--text-16); font-weight: 600; }
+.direction__text { font-size: var(--text-15); line-height: var(--leading-lede); color: var(--ink-soft); }
+/* The handwritten "this one!" reuses .try__text; this only places it on the card. */
+.direction .try__text { left: auto; right: 14px; top: 118px; }
+
+/* 06 On the canvas */
+.shot { display: flex; flex-direction: column; gap: var(--space-3); }
+.shot__link { display: block; border-radius: var(--radius-m); }
+.shot__img { display: block; width: 100%; height: auto; border: 1px solid var(--rule); border-radius: var(--radius-m); }
+.shot__caption { display: flex; flex-direction: column; gap: var(--space-1); }
+.shot__title { font-size: var(--text-16); font-weight: 600; }
+.shot__text { font-size: var(--text-15); line-height: var(--leading-body); color: var(--ink-soft); }
+.shots {
+  margin-top: 40px;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 40px var(--space-5);
+}
