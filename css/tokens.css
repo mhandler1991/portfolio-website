@@ -21,7 +21,7 @@
   --font-sans: 'Geist', 'Helvetica Neue', Arial, sans-serif;
   --font-mono: 'Geist Mono', ui-monospace, Menlo, monospace;
   --font-hand: 'Caveat', 'Bradley Hand', cursive;  /* the "try it!" margin note and the intro edit's inserts */
-  --text-12: 12px; --text-13: 13px; --text-15: 15px; --text-16: 16px; --text-19: 19px;
+  --text-12: 12px; --text-13: 13px; --text-14: 14px; --text-15: 15px; --text-16: 16px; --text-19: 19px;
   --text-22: 22px; --text-24: 24px; --text-28: 28px; --text-44: 44px; --text-72: 72px;
   --leading-tight: 1; --leading-heading: 1.1; --leading-lede: 1.45; --leading-body: 1.6;
   --tracking-label: 0.06em; --tracking-1: -0.01em; --tracking-2: -0.02em; --tracking-3: -0.03em;
@@ -36,6 +36,7 @@
   --radius-s: 4px; --radius-m: 6px;
   --tap: 44px;        /* minimum tap height for every link */
   --button-h: 48px;   /* every button */
+  --mark-size: 26px;  /* the underlined-M mark in the top bar */
   --stroke-main: 1.8px; --stroke-secondary: 1.2px;  /* pencil marks */
 
   /* Motion */
