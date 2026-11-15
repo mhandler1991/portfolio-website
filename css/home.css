@@ -97,7 +97,58 @@ button { font: inherit; cursor: pointer; }
 .intro__name {
   font-size: var(--text-72); font-weight: 500; letter-spacing: var(--tracking-3); line-height: var(--leading-tight);
 }
-.intro__lede { max-width: 640px; font-size: var(--text-22); line-height: var(--leading-lede); }
+.intro__lede { max-width: 720px; font-size: var(--text-22); line-height: var(--leading-body); }
+
+/* Intro edit: the lede strikes and rewrites itself once (js/home.js).
+ * Every mark's finished state is the default, so reduced motion and no-JS show it.
+ * JS adds .is-pending to put a mark in its start state, then removes it on cue. */
+@media (min-width: 641px) { .intro__pair { white-space: nowrap; } } /* each strike + insert stays together */
+.intro__lede.is-resetting * { transition: none; } /* reset snaps, no reverse animation */
+.intro__strike { position: relative; display: inline-block; color: var(--muted); transition: color var(--edit-fade); }
+.intro__strike.is-pending { color: var(--ink); }
+.intro__strike-line {
+  position: absolute; left: -3px; top: 50%; width: calc(100% + 6px); height: 10px; margin-top: -4px; overflow: visible;
+}
+.intro__strike-line path {
+  fill: none; stroke: var(--graphite); stroke-width: var(--stroke-main); stroke-linecap: round;
+  stroke-dasharray: 1; stroke-dashoffset: 0; transition: stroke-dashoffset var(--edit-draw);
+}
+.intro__strike.is-pending path { stroke-dashoffset: 1; opacity: 0; } /* opacity hides the round-cap dot */
+.intro__insert {
+  display: inline-block; overflow: hidden; vertical-align: -0.12em; white-space: nowrap;
+  transition-property: max-width; transition-timing-function: var(--edit-write);
+}
+.intro__insert.is-pending { max-width: 0; }
+.intro__insert-text {
+  display: inline-block; padding: 0 2px 0 var(--space-2);
+  font-family: var(--font-hand); font-size: var(--text-28); font-weight: 500; line-height: var(--leading-tight); color: var(--pencil);
+}
+.intro__caret { position: relative; display: inline-block; }
+.intro__caret .intro__insert-text { padding-left: 6px; }
+.intro__caret-mark {
+  position: absolute; left: 0; bottom: 1px; width: 10px; height: 7px; overflow: visible; transition: opacity var(--edit-fade);
+}
+.intro__caret-mark path { fill: none; stroke: var(--pencil); stroke-width: var(--stroke-main); stroke-linecap: round; stroke-linejoin: round; }
+.intro__caret.is-pending > .intro__caret-mark { opacity: 0; }
+.intro__hl {
+  padding: 0 var(--space-1); background: var(--highlighter) no-repeat 0 65% / 100% 75%;
+  transition: background-size var(--edit-swipe);
+}
+.intro__hl.is-pending { background-size: 0% 75%; }
+.intro__replay {
+  display: inline-flex; align-items: center; gap: var(--space-1); align-self: flex-start;
+  min-height: var(--tap); margin-top: calc(var(--space-1) - var(--space-5)); padding: 0;
+  background: none; border: 0; cursor: pointer;
+  font-family: var(--font-mono); font-size: var(--text-12); color: var(--muted);
+  opacity: 0; visibility: hidden; transition: opacity var(--edit-reveal); /* space reserved, so nothing shifts */
+}
+.intro__replay svg path { fill: none; stroke: currentColor; stroke-width: var(--stroke-main); stroke-linecap: round; stroke-linejoin: round; }
+.intro__replay.is-on { opacity: 1; visibility: visible; }
+.intro__replay:hover { color: var(--ink); }
+@media (max-width: 640px) {
+  .intro__lede { font-size: var(--text-19); }
+  .intro__insert-text { font-size: var(--text-24); }
+}
 .intro__links {
   display: flex; flex-wrap: wrap; gap: 0 var(--space-5);
   font-family: var(--font-mono); font-size: var(--text-15);
