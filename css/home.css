@@ -60,9 +60,12 @@ button { font: inherit; cursor: pointer; }
   gap: var(--space-2) var(--space-5);
 }
 .topbar__name {
-  display: inline-flex; align-items: center; min-height: var(--tap);
+  display: inline-flex; align-items: center; gap: var(--space-2); min-height: var(--tap);
   color: var(--ink); text-decoration: none; font-size: var(--text-15); font-weight: 600; letter-spacing: var(--tracking-1);
 }
+.topbar__mark { display: block; flex: none; width: var(--mark-size); height: var(--mark-size); }
+.topbar__mark-letter { fill: var(--ink); }
+.topbar__mark-line { stroke: var(--pencil); }
 .topbar__right { display: flex; align-items: center; gap: var(--space-2) var(--space-5); font-size: var(--text-15); }
 .nav-sections { display: flex; flex-wrap: wrap; gap: var(--space-1) var(--space-5); }
 .nav-sections a, .topbar__resume {
@@ -83,7 +86,11 @@ button { font: inherit; cursor: pointer; }
   border-top: 1px solid var(--rule); color: var(--ink); text-decoration: none; font-size: var(--text-16);
 }
 @media (max-width: 640px) {
-  .topbar__right { gap: var(--space-4); }
+  /* Mark, name, Resume and Menu share one row at 375px: smaller name and minimum gaps;
+     space-between still spreads any leftover width. */
+  .topbar__nav { column-gap: var(--space-2); }
+  .topbar__right { gap: var(--space-3); }
+  .topbar__name { font-size: var(--text-14); }
   .nav-sections { display: none; } /* re-asserts tokens.css after the display: flex above */
 }
 
