@@ -4,20 +4,23 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Maxwell Handler</title>
-    <meta name="description" content="Product manager in San Diego. I run a technical product team in fintech lending, and I build software with Claude.">
+    <meta name="description" content="Product manager in San Diego. I run a technical product team in fintech, and I build software with Claude.">
     <meta name="theme-color" content="#FFFFFF">
     <link rel="canonical" href="https://maxwellhandler.com/">
-    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon.ico" sizes="48x48">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://maxwellhandler.com/">
     <meta property="og:title" content="Maxwell Handler">
-    <meta property="og:description" content="Product manager in San Diego. I run a technical product team in fintech lending, and I build software with Claude.">
+    <meta property="og:description" content="Product manager in San Diego. I run a technical product team in fintech, and I build software with Claude.">
     <meta property="og:image" content="https://maxwellhandler.com/assets/profile.jpg">
     <meta property="og:image:alt" content="Portrait of Maxwell Handler">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Maxwell Handler">
-    <meta name="twitter:description" content="Product manager in San Diego. I run a technical product team in fintech lending, and I build software with Claude.">
+    <meta name="twitter:description" content="Product manager in San Diego. I run a technical product team in fintech, and I build software with Claude.">
     <meta name="twitter:image" content="https://maxwellhandler.com/assets/profile.jpg">
 
     <link rel="preload" href="assets/fonts/Geist-Regular.woff2" as="font" type="font/woff2" crossorigin>
@@ -31,7 +34,7 @@
     <!-- Top bar -->
     <header class="topbar">
       <nav class="topbar__nav wrap" aria-label="Primary">
-        <a class="topbar__name" href="#top">Maxwell Handler</a>
+        <a class="topbar__name" href="#top"><svg class="topbar__mark" viewBox="5.5 5 21.5 22" aria-hidden="true" focusable="false"><path class="topbar__mark-letter" d="M9.21 20.5V7.5H12.41L16 17.57L19.59 7.5H22.79V20.5H20.41V11.53L17.14 20.48H14.86L11.59 11.53V20.5Z"/><path class="topbar__mark-line" d="M7 25.2 C 12 23.8, 18 24.8, 25.5 23.6" fill="none" stroke-width="2.4" stroke-linecap="round"/></svg><span>Maxwell Handler</span></a>
         <div class="topbar__right">
           <div class="nav-sections">
             <a href="#how-i-work">How I work</a>
@@ -58,7 +61,11 @@
       <div class="intro wrap" id="top">
         <p class="intro__status"><span class="intro__dot" aria-hidden="true"></span>Now: taking Tempus from TestFlight to launch</p>
         <h1 class="intro__name">Maxwell Handler</h1>
-        <p class="intro__lede">Product manager in San Diego. I run a technical product team in fintech lending, and I build software with Claude.</p>
+        <p class="intro__lede" id="intro-lede">
+          <span class="sr-only">Product manager and builder in San Diego. I build prototypes and ship them with Claude. I run a technical product team in fintech.</span>
+          <span aria-hidden="true">Product manager<span class="intro__caret" data-step="1"><svg class="intro__caret-mark" viewBox="0 0 14 10" focusable="false"><path d="M1 9 L 7 2 L 13 9"/></svg><span class="intro__insert" data-step="1" data-ms="600"><span class="intro__insert-text">&amp; builder</span></span></span> in San Diego. I <span class="intro__pair"><span class="intro__strike" data-step="2">write PRDs<svg class="intro__strike-line" viewBox="0 0 100 10" preserveAspectRatio="none" focusable="false"><path pathLength="1" d="M1 6 C 28 3.8, 62 6.6, 99 4.2"/></svg></span><span class="intro__insert" data-step="3" data-ms="1050"><span class="intro__insert-text"><span class="intro__hl" data-step="6">build prototypes</span></span></span></span> and <span class="intro__pair"><span class="intro__strike" data-step="4">hand them off<svg class="intro__strike-line" viewBox="0 0 100 10" preserveAspectRatio="none" focusable="false"><path pathLength="1" d="M1 6 C 28 3.8, 62 6.6, 99 4.2"/></svg></span><span class="intro__insert" data-step="5" data-ms="1400"><span class="intro__insert-text">ship them with Claude</span></span></span>. I run a technical product team in fintech.</span>
+          <button type="button" hidden class="intro__replay" id="intro-replay" aria-label="Replay the edit"><svg aria-hidden="true" focusable="false" viewBox="0 0 16 16" width="12" height="12"><path d="M3.5 8a4.5 4.5 0 1 0 1.3-3.2"/><path d="M4.6 2.2 L 4.8 4.9 L 2.1 5.1"/></svg>replay</button>
+        </p>
         <nav class="intro__links" aria-label="Profiles">
           <a href="https://docs.google.com/document/d/e/2PACX-1vSrySJOaq8SuYeRH-K_3uF4G3KK_gRlw0_6EuYZO0PegL6YQ7afXb8db5gmuZ7FHSu0zb8z-pK59tql/pub" target="_blank" rel="noopener noreferrer">Resume ↗</a>
           <a href="https://linkedin.com/in/handler1991/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
@@ -83,8 +90,8 @@
           <ol class="steps" id="steps">
             <li class="step"><span class="step__num">01</span><span class="step__title">Kickoff</span><span class="step__text">project-kickoff writes the PRD, roadmap and CLAUDE.md before any code.</span></li>
             <li class="step"><span class="step__num">02</span><span class="step__title">Issues</span><span class="step__text">Work is cut into issues small enough for one session.</span></li>
-            <li class="step"><span class="step__num">03</span><span class="step__title">Session</span><span class="step__text">/start picks an issue; Claude Code builds it against the docs.</span></li>
-            <li class="step"><span class="step__num">04</span><span class="step__title">Review</span><span class="step__text">/ship opens a PR. I review it before it merges.</span></li>
+            <li class="step"><span class="step__num">03</span><span class="step__title">Session</span><span class="step__text">/start picks an issue; I build it with Claude Code against the docs.</span></li>
+            <li class="step"><span class="step__num">04</span><span class="step__title">Review</span><span class="step__text">The session ends by opening a PR. I review it before it merges.</span></li>
             <li class="step"><span class="step__num">05</span><span class="step__title">Ship</span><span class="step__text">Merging closes the issue and deploys.</span></li>
           </ol>
 
@@ -93,7 +100,7 @@
             <ul class="cards">
               <li class="card"><code class="card__file">CLAUDE.md</code><span class="card__text">Project rules every session reads before it touches code.</span></li>
               <li class="card"><code class="card__file">docs/PRD.md · ROADMAP.md</code><span class="card__text">What and why, kept separate from build order.</span></li>
-              <li class="card"><code class="card__file">.claude/skills/start · ship · merged</code><span class="card__text">Pick an issue, open the PR, clean up after merge. Manual only: Claude can’t run them on its own.</span></li>
+              <li class="card"><code class="card__file">.claude/skills/start · merged · promote</code><span class="card__text">Pick an issue, open the PR, clean up after merge, promote to production. Manual only: Claude can’t run them on its own.</span></li>
               <li class="card"><code class="card__file">.claude/settings.json</code><span class="card__text">Standing permissions per tool, so sessions don’t stop to ask about git.</span></li>
               <li class="card"><code class="card__file">The issue rule</code><span class="card__text">Anything that takes more than a couple of prompts gets an issue. One at a time.</span></li>
               <li class="card"><code class="card__file">.github/PULL_REQUEST_TEMPLATE.md</code><span class="card__text">Every PR answers the same questions.</span></li>
@@ -446,7 +453,7 @@
         </nav>
         <p class="footer__line"><a href="mailto:Mhandler1991@gmail.com">Mhandler1991@gmail.com</a><span class="footer__sep" aria-hidden="true">·</span><span>San Diego, CA</span></p>
         <div class="footer__bottom">
-          <span>Built with Claude Code, using the workflows above.</span>
+          <span>I built this with support from Claude Code, using the workflows above.</span>
           <span>© 2026 Maxwell Handler</span>
         </div>
       </div>
