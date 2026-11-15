@@ -34,7 +34,8 @@ Static HTML, CSS and vanilla JavaScript. There is no build step, framework, pack
 - [`index.html`](index.html) is the whole site: semantic markup (`header`, `main`, `section`, `article`, `footer`) with no inline styles.
 - [`css/tokens.css`](css/tokens.css) loads first and holds the design tokens plus global rules (links, buttons, focus rings, phone menu visibility).
 - [`css/home.css`](css/home.css) holds `@font-face` declarations and every layout and component style, written in a light BEM style (`.project__title`, `.timeline__row--current`).
-- [`js/home.js`](js/home.js) (deferred) does two things:
+- [`js/home.js`](js/home.js) (deferred) does three things:
+  - **Intro edit:** once per page load, when the lede is 60% on screen, strikes “write PRDs” and “hand them off” and writes the new words in pencil; a replay link fades in after. The finished marks are the CSS default, so reduced motion and no-JS show them without animation.
   - **Workflow steps:** highlights steps 01 to 05 in turn, only while the row is at least half on screen, pauses on hover, stops after two cycles, and does nothing when the visitor prefers reduced motion.
   - **Phone menu:** at 640px and under, a Menu button opens the section links. It keeps `aria-expanded` in sync, and closes on a link click or Escape.
 
@@ -126,7 +127,8 @@ The custom domain is set by [`CNAME`](CNAME). `stage` is the repository's defaul
 - Every link and button shows a 2px blue focus ring; a skip link leads to the main content.
 - Headings run h1 (name), h2 (sections), h3 (projects and experiments).
 - Hand-drawn marks are decorative and hidden from screen readers. The redacted title reads as “codename lantern.”
-- With reduced motion, the step animation and smooth scrolling are off.
+- With reduced motion, the intro edit, the step animation and smooth scrolling are off; the intro shows its finished marks.
+- The intro edit’s animated text is `aria-hidden`; screen readers get only the final sentence.
 
 ## License
 

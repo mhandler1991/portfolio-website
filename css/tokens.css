@@ -14,14 +14,15 @@
   --paper-alt: #FAFAF9;    /* footer, phone-frame fill, secondary hover (stone-50) */
   --accent: #1D4ED8;       /* links, section numbers, active step, current-role dot (blue-700) */
   --pencil: #B91C1C;       /* hand-drawn marks and the "Didn't" label (red-700) */
+  --graphite: #44403C;     /* strike-throughs in the intro edit; red stays for new words (stone-700) */
   --highlighter: linear-gradient(100deg, rgba(255, 221, 64, 0) 0.5%, rgba(255, 221, 64, 0.85) 2%, rgba(255, 221, 64, 0.62) 6%, rgba(255, 221, 64, 0.38) 92%, rgba(255, 221, 64, 0.8) 97%, rgba(255, 221, 64, 0) 99.5%);
 
   /* Type */
   --font-sans: 'Geist', 'Helvetica Neue', Arial, sans-serif;
   --font-mono: 'Geist Mono', ui-monospace, Menlo, monospace;
-  --font-hand: 'Caveat', 'Bradley Hand', cursive;  /* the "try it!" margin note only */
+  --font-hand: 'Caveat', 'Bradley Hand', cursive;  /* the "try it!" margin note and the intro edit's inserts */
   --text-12: 12px; --text-13: 13px; --text-15: 15px; --text-16: 16px; --text-19: 19px;
-  --text-22: 22px; --text-28: 28px; --text-44: 44px; --text-72: 72px;
+  --text-22: 22px; --text-24: 24px; --text-28: 28px; --text-44: 44px; --text-72: 72px;
   --leading-tight: 1; --leading-heading: 1.1; --leading-lede: 1.45; --leading-body: 1.6;
   --tracking-label: 0.06em; --tracking-1: -0.01em; --tracking-2: -0.02em; --tracking-3: -0.03em;
 
@@ -40,6 +41,11 @@
   /* Motion */
   --fade: 700ms ease;   /* step highlight in/out */
   --step: 2200ms;       /* step interval */
+  --edit-draw: 600ms ease-in-out;              /* intro edit: strike line draws */
+  --edit-fade: 400ms ease;                     /* intro edit: struck words dim, caret appears */
+  --edit-swipe: 700ms ease-out;                /* intro edit: highlighter sweep */
+  --edit-reveal: 600ms ease;                   /* intro edit: replay link fades in */
+  --edit-write: cubic-bezier(0.3, 0.1, 0.7, 0.9);  /* intro edit: insert writing curve; JS sets each duration */
 }
 
 body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--font-sans); }
