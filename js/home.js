@@ -72,6 +72,7 @@
     }, REPLAY_AT));
   }
 
+  replay.hidden = false; // takes its inline space now (still invisible), so its fade-in can't reflow
   toStart(); // hide the new words before the first paint that matters
   replay.addEventListener('click', play);
 
