@@ -135,13 +135,17 @@ button { font: inherit; cursor: pointer; }
   transition: background-size var(--edit-swipe);
 }
 .intro__hl.is-pending { background-size: 0% 75%; }
+/* Replay sits inline after “in fintech.”. Hidden (no space) until JS un-hides it;
+ * then visibility reserves its width so nothing reflows when it fades in. */
 .intro__replay {
-  display: inline-flex; align-items: center; gap: var(--space-1); align-self: flex-start;
-  min-height: var(--tap); margin-top: calc(var(--space-1) - var(--space-5)); padding: 0;
+  position: relative; display: inline-flex; align-items: center; gap: var(--space-1); padding: 0;
   background: none; border: 0; cursor: pointer;
   font-family: var(--font-mono); font-size: var(--text-12); color: var(--muted);
-  opacity: 0; visibility: hidden; transition: opacity var(--edit-reveal); /* space reserved, so nothing shifts */
+  opacity: 0; visibility: hidden; transition: opacity var(--edit-reveal);
 }
+.intro__replay[hidden] { display: none; } /* reduced motion and no-JS: no button, no reserved space */
+/* 44px hit area that doesn't grow the line box */
+.intro__replay::before { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: var(--tap); transform: translateY(-50%); }
 .intro__replay svg path { fill: none; stroke: currentColor; stroke-width: var(--stroke-main); stroke-linecap: round; stroke-linejoin: round; }
 .intro__replay.is-on { opacity: 1; visibility: visible; }
 .intro__replay:hover { color: var(--ink); }
