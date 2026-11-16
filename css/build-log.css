@@ -80,3 +80,103 @@
   margin-top: 40px;
   display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 40px var(--space-5);
 }
+
+/* 07 How a change gets made. Step rows reuse .steps/.step from home.css (no id, so no animation). */
+.labeled__val code { font-size: var(--text-13); }
+.labeled__key code { font-weight: 500; white-space: nowrap; }
+.labeled--wide .labeled__row { grid-template-columns: 150px minmax(0, 1fr); }
+@media (max-width: 500px) { .labeled--wide .labeled__row { grid-template-columns: 120px minmax(0, 1fr); } }
+.rules-box {
+  margin-top: var(--space-5); padding: var(--space-5);
+  display: flex; flex-direction: column; gap: var(--space-3);
+  border: 1px solid var(--rule); border-radius: var(--radius-m);
+}
+.rules-box__list {
+  padding-left: 20px; display: flex; flex-direction: column; gap: var(--space-1);
+  font-size: var(--text-15); line-height: var(--leading-body);
+}
+/* File tree: scrolls inside its own box so it never widens the page */
+.tree {
+  margin-top: var(--space-5); overflow-x: auto; padding: var(--space-5);
+  background: var(--paper-alt); border: 1px solid var(--rule); border-radius: var(--radius-m);
+}
+.tree:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.tree__pre { margin: 0; font-family: var(--font-mono); font-size: var(--text-13); line-height: var(--leading-body); }
+.tree__name { display: inline-block; min-width: 290px; margin-right: var(--space-4); }
+.tree__note { color: var(--muted); }
+/* Eight-step flow: a denser .steps row; the two steps only I can do get a pencil-red rule */
+.steps--flow { grid-template-columns: repeat(auto-fit, minmax(118px, 1fr)); gap: var(--space-3); }
+/* Fixed counts where auto-fit would strand one step on its own row (5 + 1, 7 + 1) */
+@media (min-width: 1024px) { .steps--loop { grid-template-columns: repeat(6, minmax(0, 1fr)); } }
+@media (min-width: 641px) { .steps--flow { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.steps--flow .step { padding: var(--space-3); gap: var(--space-1); }
+.steps--flow .step__title { font-size: var(--text-16); }
+.steps--flow .step__text { font-size: var(--text-13); line-height: var(--leading-lede); }
+.step--mine { border-top-color: var(--pencil); }
+.log-note { margin-top: var(--space-3); }
+
+/* 08 In the repo: issue → PR cards, reusing .card */
+.prs {
+  list-style: none; padding: 0;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: var(--space-4);
+}
+.pr { gap: var(--space-2); padding: var(--space-5); }
+.pr__num { font-family: var(--font-mono); font-size: var(--text-12); color: var(--accent); }
+.pr__title { font-size: var(--text-19); font-weight: 600; letter-spacing: var(--tracking-1); line-height: var(--leading-heading); }
+.pr__commit {
+  margin-top: var(--space-1); padding: var(--space-3);
+  background: var(--paper-alt); border-radius: var(--radius-s);
+  font-family: var(--font-mono); font-size: var(--text-12); line-height: var(--leading-body); color: var(--ink-soft);
+}
+.pr__commit figcaption, .pr__commit blockquote { display: inline; margin: 0; }
+.pr__commit figcaption { color: var(--muted); }
+.pr__links { display: flex; flex-wrap: wrap; gap: 0 var(--space-5); margin-top: auto; }
+.log-cta { margin-top: var(--space-5); }
+
+/* 09 Calls I made: the Worked/Didn't pattern with section spacing */
+.log-calls { gap: 40px; }
+
+/* 10 Two details */
+.mark-demo { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-7); }
+.mark-demo__tile {
+  flex: none; width: 220px; height: 220px; display: flex; align-items: center; justify-content: center;
+  border: 1px solid var(--rule); border-radius: var(--radius-m);
+}
+.mark-demo__svg { display: block; width: 150px; height: 150px; }
+.mark-demo__list { flex: 1 1 320px; min-width: 0; }
+.edit-demo { padding: var(--space-6); border: 1px solid var(--rule); border-radius: var(--radius-m); }
+.edit-demo__line { max-width: 760px; font-size: var(--text-22); line-height: var(--leading-body); }
+.edit-demo__hand { font-family: var(--font-hand); font-size: var(--text-28); font-weight: 500; color: var(--pencil); }
+@media (max-width: 640px) {
+  .edit-demo { padding: var(--space-5); }
+  .edit-demo__line { font-size: var(--text-19); }
+  .edit-demo__hand { font-size: var(--text-24); }
+}
+
+/* 11 Still editing */
+.still {
+  margin-top: var(--space-2);
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: var(--space-7);
+}
+.still__label { margin-bottom: var(--space-2); }
+.todo { list-style: none; padding: 0; border-bottom: 1px solid var(--rule); }
+.todo__item {
+  display: flex; gap: var(--space-3); padding: var(--space-3) 0; border-top: 1px solid var(--rule);
+  font-size: var(--text-16); line-height: var(--leading-lede);
+}
+.todo__box { flex: none; width: 18px; height: 18px; margin-top: 3px; fill: none; stroke: var(--ink); }
+.todo__box .todo__check { stroke: var(--pencil); stroke-linecap: round; stroke-linejoin: round; }
+/* At phone width the longer done items wrap, and the one-line pencil strike can't follow a
+   second line. There they get a graphite line-through per line instead. */
+@media (max-width: 500px) {
+  .todo__item--done .intro__strike {
+    display: inline; text-decoration: line-through; text-decoration-color: var(--graphite);
+    text-decoration-thickness: var(--stroke-main);
+  }
+  .todo__item--done .intro__strike-line { display: none; }
+}
+.still__end { display: flex; flex-direction: column; justify-content: flex-end; gap: var(--space-5); }
+/* The homepage's "More to come!" arrow, taller, with two equal handwritten lines */
+.still__more { min-height: 120px; margin-left: 20px; padding-top: var(--space-1); }
+.still__close { font-size: var(--text-22); line-height: var(--leading-lede); }
+.still__back { align-self: flex-start; }
