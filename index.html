@@ -136,10 +136,15 @@
               </div>
               <div class="story">
                 <p class="story__lede">An app that helps friends and family get together on a regular cadence, working around everyone’s existing commitments. Built solo.</p>
-                <!-- TODO: Tempus screenshots. Replace each placeholder frame with <img> inside .phone (home feed, Grid Refiner) and real alt text describing the screen. -->
                 <div class="phones">
-                  <div class="phone" role="img" aria-label="Tempus home feed screenshot, coming soon">[Screenshot: home feed]</div>
-                  <div class="phone" role="img" aria-label="Tempus Grid Refiner screenshot, coming soon">[Screenshot: Grid Refiner]</div>
+                  <figure class="phone">
+                    <div class="phone__frame"><img src="assets/tempus/tempus-onboarding-problem.webp" width="540" height="1174" loading="lazy" alt="Tempus onboarding: a group chat going in circles over which day works, under the line “We’ve all been there.”"></div>
+                    <figcaption class="phone__cap">01 The problem</figcaption>
+                  </figure>
+                  <figure class="phone">
+                    <div class="phone__frame"><img src="assets/tempus/tempus-onboarding-how.webp" width="540" height="1174" loading="lazy" alt="Tempus onboarding: three steps, create event, share link, find the time."></div>
+                    <figcaption class="phone__cap">02 How it works</figcaption>
+                  </figure>
                 </div>
                 <h4 class="label story__label">Process</h4>
                 <p class="story__text">Planned in Linear as milestones, built one issue at a time in Claude Code with custom skills, then audited. A full review of the iOS app (89 Swift files, about 17,000 lines) became the tickets for the next milestone.</p>

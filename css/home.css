@@ -264,13 +264,13 @@ mark {
 
 /* Phone frames */
 .phones { display: flex; flex-wrap: wrap; gap: var(--space-5); margin: var(--space-2) 0; }
-.phone {
-  width: 180px; height: 380px; padding: var(--space-4);
-  border: 8px solid var(--ink); border-radius: 32px; background: var(--paper-alt);
-  box-shadow: 0 24px 48px -24px rgba(28, 25, 23, 0.35);
-  display: flex; align-items: center; justify-content: center; text-align: center;
-  font-family: var(--font-mono); font-size: var(--text-12); color: var(--muted);
+.phone { width: 180px; margin: 0; display: flex; flex-direction: column; gap: var(--space-3); }
+.phone__frame {
+  border: 8px solid var(--ink); border-radius: 32px; background: var(--ink);
+  box-shadow: 0 24px 48px -24px rgba(28, 25, 23, 0.35); overflow: hidden;
 }
+.phone__frame img { display: block; width: 100%; height: auto; }
+.phone__cap { font-family: var(--font-mono); font-size: var(--text-12); color: var(--muted); }
 
 /* Worked / Didn't */
 .outcomes {

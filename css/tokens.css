@@ -11,7 +11,7 @@
   --muted: #57534E;        /* labels, meta, captions (stone-600), 7.5:1 on white */
   --rule: #E7E5E4;         /* light dividers between projects, card borders (stone-200) */
   --paper: #FFFFFF;        /* page background */
-  --paper-alt: #FAFAF9;    /* footer, phone-frame fill, secondary hover (stone-50) */
+  --paper-alt: #FAFAF9;    /* footer, secondary hover (stone-50) */
   --accent: #1D4ED8;       /* links, section numbers, active step, current-role dot (blue-700) */
   --pencil: #B91C1C;       /* hand-drawn marks and the "Didn't" label (red-700) */
   --graphite: #44403C;     /* strike-throughs in the intro edit; red stays for new words (stone-700) */
