@@ -18,6 +18,17 @@ One page, five parts, in this order:
 | 04 Journey | `#journey` | Career timeline, most recent first, and the full resume link |
 | Footer | `#contact` | Contact buttons, email and location |
 
+### Build log page
+
+`/how-i-built-this/` tells how the site was built: the rejected directions, the content-first reset, the design canvas, the workflow and its safeguards, and real issues and PRs from this repo. The homepage footer links to it. It is the one page besides the homepage (PRD §1).
+
+#### Keeping the build log true
+
+The page avoids live counts and “recent” wording on purpose, because they go stale. Two parts need upkeep:
+
+- **Open edits (section 11) stays evergreen.** The open items are “Add new builds as they ship”, “Update what’s here as the work changes” and “Track what’s next in the repo’s open issues ↗”. Don’t add specific issues, features or dates to it; specific work lives in GitHub issues. The list changes only when the owner decides a new milestone belongs in the done items.
+- **The “Last edited” date** at the end of section 11 changes in any PR that changes this page’s content.
+
 ## Design
 
 A plain homepage that looks edited by hand: white page, warm near-black type, one blue accent, and a small set of red-pencil marks (an underline, a redaction bar, a circle, a margin note) placed on specific content.
@@ -31,7 +42,7 @@ A plain homepage that looks edited by hand: white page, warm near-black type, on
 
 Static HTML, CSS and vanilla JavaScript. There is no build step, framework, package manager or CSS library.
 
-- [`index.html`](index.html) is the whole site: semantic markup (`header`, `main`, `section`, `article`, `footer`) with no inline styles.
+- [`index.html`](index.html) is the homepage: semantic markup (`header`, `main`, `section`, `article`, `footer`) with no inline styles.
 - [`css/tokens.css`](css/tokens.css) loads first and holds the design tokens plus global rules (links, buttons, focus rings, phone menu visibility).
 - [`css/home.css`](css/home.css) holds `@font-face` declarations and every layout and component style, written in a light BEM style (`.project__title`, `.timeline__row--current`).
 - [`js/home.js`](js/home.js) (deferred) does three things:
@@ -53,13 +64,17 @@ Layout breakpoints: 640px (compact top bar and menu) and 500px (Journey rows and
 ├── icon-192.png               # Icon set: Android, via the manifest
 ├── icon-512.png               # Icon set: Android, via the manifest
 ├── site.webmanifest           # Points Android at the two icons
+├── how-i-built-this/
+│   └── index.html             # The build log page
 ├── css/
 │   ├── tokens.css             # Design tokens and global rules
-│   └── home.css               # Fonts, layout and components
+│   ├── home.css               # Fonts, layout and components
+│   └── build-log.css          # Styles only the build log needs
 ├── js/
 │   └── home.js                # Step animation and phone menu
 ├── assets/
 │   ├── profile.jpg            # Link-preview image (Open Graph, Twitter)
+│   ├── build-log/             # Swatch and canvas images for the build log
 │   └── fonts/                 # Geist, Geist Mono, Caveat (woff2) + OFL licenses
 ├── archive/                   # Previous site, kept for reference (noindex)
 │   ├── favicon.svg            # Old icon, used by the archived pages

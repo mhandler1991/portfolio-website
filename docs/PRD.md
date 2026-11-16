@@ -6,13 +6,13 @@
 
 ## 1. What this is
 
-Maxwell Handler's personal site: one page that shows how he works, what he has built, and his career, for hiring managers, collaborators and peers.
+Maxwell Handler's personal site: one homepage that shows how he works, what he has built, and his career, for hiring managers, collaborators and peers, plus one page on how the site itself was built.
 
 ### What it is not
 
 - Not a blog or a CMS. There is no post list, feed or authoring flow.
 - Not a web app. No accounts, forms that store data, or backend.
-- Not a multi-page site. The archived previous site under `archive/` is kept for reference, not extended.
+- Not a multi-page site. The one exception is the build log at `/how-i-built-this/` (owner decision, 2026-11-15). The archived previous site under `archive/` is kept for reference, not extended.
 
 ---
 
@@ -43,6 +43,7 @@ A resume says what someone did; it doesn't show how they work. The page puts the
 | Content | The five sections described in `README.md` "What's on the page", including filling the pending-link placeholders |
 | Design | Polish within the existing design language (tokens, red-pencil marks, one blue accent) |
 | Accessibility and performance | Keeping the bars in P3 as content changes |
+| Build log | The single extra page at `/how-i-built-this/`: how the site was built, from rejected directions to the workflow and real issues and PRs. Linked from the homepage footer |
 
 ### Out of scope, permanently
 
@@ -53,7 +54,7 @@ A resume says what someone did; it doesn't show how they work. The page puts the
 
 | Item | Why deferred |
 |---|---|
-| Additional pages beyond the homepage | No content needs one yet; the single page is the product |
+| Additional pages beyond the homepage | No content needs one yet; the single page is the product. One exception, the build log at `/how-i-built-this/`, was approved 2026-11-15 (RATIONALE R17) |
 
 ---
 

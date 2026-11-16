@@ -90,3 +90,6 @@ The site has no build, lint or test tooling by design (PRD P1). `git diff --chec
 
 ### R16. Why `/start` runs the diff check after staging, with `--cached`
 `git diff --check origin/stage` compares the working tree with `stage`, and git leaves untracked files out of that comparison. In #16 it printed clean while a new, untracked PR template had a trailing space; `git diff --check --cached` after staging caught it. Running the check on the index against `origin/stage` covers new files, staged edits and anything already committed on the branch. `/promote` keeps its two-ref form because two branches have no untracked files (#17).
+
+### R17. Why the site has exactly one extra page
+Owner decision 2026-11-15. The story of how the site was built (ten rejected directions, the content-first reset, the canvas, the workflow and its safeguards, real issues and PRs) doesn't fit the homepage's two-minute scan, and it is the proof behind How I work: the homepage claims a way of working, and the build log shows it with checkable links. It is one deliberate exception, not a move to a multi-page site; another page would need its own decision.

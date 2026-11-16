@@ -385,3 +385,8 @@ mark {
   margin-top: 40px; padding-top: var(--space-5); border-top: 1px solid var(--rule);
   font-family: var(--font-mono); font-size: var(--text-13); color: var(--muted);
 }
+/* Build-log link after the credit. On its own line, so the credit is no wider than before
+   and the footer row wraps exactly as it did; the 44px hit area doesn't grow the line box. */
+.footer__log { position: relative; display: block; width: fit-content; white-space: nowrap; }
+@media (max-width: 640px) { .footer__log { margin-inline: auto; } } /* the credit wraps and centers here */
+.footer__log::before { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: var(--tap); transform: translateY(-50%); }
