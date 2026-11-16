@@ -245,6 +245,266 @@
           </div>
         </div>
       </section>
+
+      <!-- 07 How a change gets made -->
+      <section class="section wrap" id="tools" aria-labelledby="tools-title">
+        <div class="section__inner">
+          <h2 class="section-title" id="tools-title"><span class="section-title__num">07</span>How a change gets made</h2>
+          <p class="log-intro">Every change on this site went through the same loop, whether it was a favicon or a full rebuild.</p>
+          <!-- The homepage's step row, without id="steps", so home.js leaves it still -->
+          <ol class="steps steps--loop">
+            <li class="step"><span class="step__num">01</span><span class="step__title">Talk</span><span class="step__text">I describe the change and what’s wrong with the current one.</span></li>
+            <li class="step"><span class="step__num">02</span><span class="step__title">Mock</span><span class="step__text">Claude mocks options side by side on the canvas, usually three.</span></li>
+            <li class="step"><span class="step__num">03</span><span class="step__title">Pick</span><span class="step__text">I choose, combine or reject. Often I reject.</span></li>
+            <li class="step"><span class="step__num">04</span><span class="step__title">Review</span><span class="step__text">A design review skill checks it before it’s done.</span></li>
+            <li class="step"><span class="step__num">05</span><span class="step__title">Package</span><span class="step__text">The change becomes a small kit: spec, working reference, prompt.</span></li>
+            <li class="step"><span class="step__num">06</span><span class="step__title">Ship</span><span class="step__text">Claude Code plans, I approve, it builds, I deploy.</span></li>
+          </ol>
+          <h3 class="label log-label">The review skills</h3>
+          <ol class="labeled labeled--closed">
+            <li class="labeled__row"><span class="labeled__key labeled__key--version">critique</span><span class="labeled__val"><code>/design:design-critique</code>. Run twice. The first pass caught the Builds layout breaking at desktop width, the second caught the top bar eating a quarter of a phone screen.</span></li>
+            <li class="labeled__row"><span class="labeled__key labeled__key--version">system</span><span class="labeled__val"><code>/design:design-system</code>. Scored the page 64/100 with 14 issues: 9 colors hardcoded 202 times, 19 different gap values, buttons with no hover or focus states. Fixed in one pass.</span></li>
+            <li class="labeled__row"><span class="labeled__key labeled__key--version">elevate</span><span class="labeled__val"><code>/design-skills:design-elevation</code>. I kept five of its moves and skipped five that fought the direction, like switching the font to Inter and adding gradients.</span></li>
+          </ol>
+          <h3 class="label log-label">The handoff kits</h3>
+          <ol class="labeled labeled--closed">
+            <li class="labeled__row"><span class="labeled__key labeled__key--version">Homepage</span><span class="labeled__val">The full rebuild: design spec, tokens, every word of copy, decisions, and a working reference page.</span></li>
+            <li class="labeled__row"><span class="labeled__key labeled__key--version">Journey</span><span class="labeled__val">“2024 → now”, the live dot, and the “More to come!” arrow.</span></li>
+            <li class="labeled__row"><span class="labeled__key labeled__key--version">Favicon</span><span class="labeled__val">The Geist M with a pencil underline, at every size browsers and phones ask for.</span></li>
+            <li class="labeled__row"><span class="labeled__key labeled__key--version">Top bar</span><span class="labeled__val">The same mark, left of my name.</span></li>
+            <li class="labeled__row"><span class="labeled__key labeled__key--version">Intro</span><span class="labeled__val">The intro line that edits itself.</span></li>
+            <li class="labeled__row"><span class="labeled__key labeled__key--version">This page</span><span class="labeled__val">This build log.</span></li>
+          </ol>
+          <div class="rules-box">
+            <p class="label">Every kit’s prompt says the same four things</p>
+            <ol class="rules-box__list">
+              <li>Read the spec and the reference, then find the part of the site it touches.</li>
+              <li>Tell me the plan in a few lines and wait for my go.</li>
+              <li>Change only that part, with the site’s existing tokens.</li>
+              <li>Keep the kit out of git. The repo is public; the kit is mine.</li>
+            </ol>
+          </div>
+          <h3 class="label log-label">Inside every Claude Code session: project-kickoff</h3>
+          <p class="log-text">project-kickoff is a Claude Code skill I built. One command sets up a new project with the docs, commands and guardrails below, scaled by tier: a Utility gets less paperwork than an App, and an App less than a Platform.</p>
+          <div class="tree" role="region" aria-label="Files project-kickoff generates" tabindex="0">
+<pre class="tree__pre"><span class="tree__name">project/</span>
+<span class="tree__name">├── README.md</span>
+<span class="tree__name">├── CLAUDE.md</span><span class="tree__note">rules every session reads first</span>
+<span class="tree__name">├── LICENSE</span>
+<span class="tree__name">├── docs/</span>
+<span class="tree__name">│   ├── PRD.md</span><span class="tree__note">what and why</span>
+<span class="tree__name">│   ├── ROADMAP.md</span><span class="tree__note">phases and build order</span>
+<span class="tree__name">│   ├── RATIONALE.md</span><span class="tree__note">the why behind the non-obvious rules</span>
+<span class="tree__name">│   ├── DESIGN.md</span>
+<span class="tree__name">│   ├── DATA-MODEL.md</span>
+<span class="tree__name">│   ├── DEPLOY.md</span><span class="tree__note">environments and releases</span>
+<span class="tree__name">│   ├── workflow.md</span><span class="tree__note">the issue → PR → merge loop</span>
+<span class="tree__name">│   └── commands.md</span><span class="tree__note">cheat sheet for the commands</span>
+<span class="tree__name">├── .claude/</span>
+<span class="tree__name">│   ├── settings.json</span><span class="tree__note">standing permissions, e.g. Bash(git:*)</span>
+<span class="tree__name">│   └── skills/</span><span class="tree__note">the seven commands</span>
+<span class="tree__name">└── .github/</span>
+<span class="tree__name">    ├── ISSUE_TEMPLATE/</span><span class="tree__note">App and Platform tiers</span>
+<span class="tree__name">    └── PULL_REQUEST_TEMPLATE.md</span></pre>
+          </div>
+          <h3 class="label log-label">Seven commands run the work</h3>
+          <ol class="labeled labeled--closed labeled--wide">
+            <li class="labeled__row"><span class="labeled__key labeled__key--version"><code>/start {issue}</code></span><span class="labeled__val">Loads the issue, branches (or resumes the branch), reads only the docs the change needs, builds, reviews its own work against the acceptance criteria, runs the checks, commits with real reasoning and opens the PR. Can take several small related issues at once.</span></li>
+            <li class="labeled__row"><span class="labeled__key labeled__key--version"><code>/merged {pr}</code></span><span class="labeled__val">Confirms the merge with GitHub’s API, deletes the branch, closes out the issue, files any follow-ups, and writes the cycle to the project’s audit log.</span></li>
+            <li class="labeled__row"><span class="labeled__key labeled__key--version"><code>/promote</code></span><span class="labeled__val">Opens the PR from dev to production. I merge it and tag the release myself.</span></li>
+            <li class="labeled__row"><span class="labeled__key labeled__key--version"><code>/new-issue</code></span><span class="labeled__val">Turns a rough note into a real issue: acceptance criteria, milestone, owner label.</span></li>
+            <li class="labeled__row"><span class="labeled__key labeled__key--version"><code>/batch-issues</code></span><span class="labeled__val">Works several clear, small issues back to back. Every one still gets its own PR and my merge.</span></li>
+            <li class="labeled__row"><span class="labeled__key labeled__key--version"><code>/audit-docs</code></span><span class="labeled__val">Read-only. Checks the docs and the commands against about 19 known ways they drift or break.</span></li>
+            <li class="labeled__row"><span class="labeled__key labeled__key--version"><code>/commands</code></span><span class="labeled__val">Lists the project’s commands, live.</span></li>
+          </ol>
+          <h3 class="label log-label">From issue to production, on this site</h3>
+          <ol class="steps steps--flow">
+            <li class="step"><span class="step__num">01</span><span class="step__title">Issue</span><span class="step__text">Anything bigger than a couple of prompts gets one, with acceptance criteria.</span></li>
+            <li class="step"><span class="step__num">02</span><span class="step__title">Branch</span><span class="step__text">/start branches off stage: feature/{issue}-{slug}.</span></li>
+            <li class="step"><span class="step__num">03</span><span class="step__title">Build</span><span class="step__text">One issue per session, against the docs.</span></li>
+            <li class="step"><span class="step__num">04</span><span class="step__title">PR</span><span class="step__text">Into stage, with the PR template’s checklist filled in.</span></li>
+            <li class="step"><span class="step__num">05</span><span class="step__title">Check</span><span class="step__text">git diff --check on the staged changes, then layout by eye on a Netlify preview at 375, 768, 1280 and 1440px.</span></li>
+            <li class="step step--mine"><span class="step__num">06</span><span class="step__title">Merge</span><span class="step__text">I merge. Always me.</span></li>
+            <li class="step"><span class="step__num">07</span><span class="step__title">Sync</span><span class="step__text">/merged verifies, cleans up and logs.</span></li>
+            <li class="step step--mine"><span class="step__num">08</span><span class="step__title">Promote</span><span class="step__text">stage → main. GitHub Pages builds production from main; I tag the release.</span></li>
+          </ol>
+          <p class="workflow__note log-note">Red rules mark the two steps only I can do.</p>
+          <h3 class="label log-label">The safeguards</h3>
+          <ol class="labeled labeled--closed">
+            <li class="labeled__row"><span class="labeled__key labeled__key--version">Invoke</span><span class="labeled__val">Every command with a side effect is set to <code>disable-model-invocation: true</code>. Nothing runs unless I type it.</span></li>
+            <li class="labeled__row"><span class="labeled__key labeled__key--version">Merge</span><span class="labeled__val">No PR merges without me. One setting lets the work move faster (bundling small issues, batch runs), and it <mark>still can’t turn the merge gate off</mark>.</span></li>
+            <li class="labeled__row"><span class="labeled__key labeled__key--version">Checks</span><span class="labeled__val">The kit runs typecheck, lint and tests in CI on projects that have them. This site has no build or test tooling by design, so its one automated check is <code>git diff --check</code>, run on the staged changes. Layout is checked by eye on a preview at four widths.</span></li>
+            <li class="labeled__row"><span class="labeled__key labeled__key--version">Scope</span><span class="labeled__val"><code>settings.json</code> pre-approves routine git and GitHub commands, like <code>git commit</code> and <code>gh pr create</code>, so sessions don’t stall. It explicitly denies <code>git push --force</code>, <code>git reset --hard</code>, <code>git clean -fd</code> and <code>rm -rf</code>. <mark>Merging isn’t on the list at all.</mark></span></li>
+            <li class="labeled__row"><span class="labeled__key labeled__key--version">Release</span><span class="labeled__val">Production is its own step. Feature PRs go into stage; /promote opens stage → main, and I tag each release by hand because the tag is the rollback point.</span></li>
+            <li class="labeled__row"><span class="labeled__key labeled__key--version">Truth</span><span class="labeled__val">/merged checks merge state with GitHub’s API, not local git, after a real bug where local state lied.</span></li>
+            <li class="labeled__row"><span class="labeled__key labeled__key--version">Record</span><span class="labeled__val">A permanent audit-log issue gets an entry every cycle. Findings tagged “kit candidate” go back into project-kickoff itself.</span></li>
+          </ol>
+          <h3 class="label log-label">How the kit got here</h3>
+          <ol class="labeled labeled--closed">
+            <li class="labeled__row"><span class="labeled__key labeled__key--version">v0.1</span><span class="labeled__val">The first kit: a tiered doc set and three commands, /start, /ship and /merged, built by auditing lantern’s docs.</span></li>
+            <li class="labeled__row"><span class="labeled__key labeled__key--version">Bugs</span><span class="labeled__val">Real use found real bugs: arguments indexed wrong, a shell-quoting failure on macOS zsh, permission grants that didn’t match the commands, and a completion record that checked the wrong GitHub resource. All fixed.</span></li>
+            <li class="labeled__row"><span class="labeled__key labeled__key--version">/ship</span><span class="labeled__val">Folded into /start. The safety sweep lived only on /ship, and /ship didn’t reliably get run. <mark>A check only counts if it’s on a step you can’t skip.</mark></span></li>
+            <li class="labeled__row"><span class="labeled__key labeled__key--version labeled__key--current">v0.2.0</span><span class="labeled__val">Seven commands, the audit log, the merge gate, a versioned changelog, and an install script that catches stale downloads. Runs in the Claude Code CLI, VS Code and claude.ai.</span></li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- 08 In the repo -->
+      <section class="section wrap" id="repo" aria-labelledby="repo-title">
+        <div class="section__inner">
+          <h2 class="section-title" id="repo-title"><span class="section-title__num">08</span>In the repo</h2>
+          <p class="log-intro">The site’s repo is public, so all of this is checkable. Each example below is one issue taken through the loop above, from start to merge.</p>
+          <ul class="prs">
+            <li class="card pr">
+              <span class="pr__num">PR #16</span>
+              <h3 class="pr__title">Installing the kit</h3>
+              <p class="card__text">project-kickoff v0.2.0 set up the repo in one PR: 19 files, the docs, the seven commands, the settings and the templates. Tier 2, and stage became the default branch.</p>
+              <p class="pr__links"><a class="link-sm" href="https://github.com/mhandler1991/portfolio-website/pull/16" target="_blank" rel="noopener noreferrer">PR #16 ↗</a></p>
+            </li>
+            <li class="card pr">
+              <span class="pr__num">#17 → PR #18</span>
+              <h3 class="pr__title">The workflow catches its own gap</h3>
+              <p class="card__text">The diff check printed clean while a brand-new file had a trailing space, because git leaves untracked files out of that comparison. Fixed by checking after staging, and written into the project’s rationale as R16.</p>
+              <p class="pr__links"><a class="link-sm" href="https://github.com/mhandler1991/portfolio-website/issues/17" target="_blank" rel="noopener noreferrer">Issue #17 ↗</a><a class="link-sm" href="https://github.com/mhandler1991/portfolio-website/pull/18" target="_blank" rel="noopener noreferrer">PR #18 ↗</a></p>
+            </li>
+            <li class="card pr">
+              <span class="pr__num">#19 → PR #24</span>
+              <h3 class="pr__title">Favicon</h3>
+              <p class="card__text">The new icon set landed byte-identical to the zip I handed over. The old favicon moved to the archive, so the archived pages keep their original icon.</p>
+              <p class="pr__links"><a class="link-sm" href="https://github.com/mhandler1991/portfolio-website/issues/19" target="_blank" rel="noopener noreferrer">Issue #19 ↗</a><a class="link-sm" href="https://github.com/mhandler1991/portfolio-website/pull/24" target="_blank" rel="noopener noreferrer">PR #24 ↗</a></p>
+            </li>
+            <li class="card pr">
+              <span class="pr__num">#27 → PR #28</span>
+              <h3 class="pr__title">The intro edits itself</h3>
+              <p class="card__text">160 lines across the page and its script. Claude Code improved on my reference along the way, and said so in the commit:</p>
+              <figure class="pr__commit"><figcaption>From the commit: </figcaption><blockquote>JS reserves the lede’s finished height while it plays so the links below don’t jump; the reference let them move 43px at 1280px.</blockquote></figure>
+              <p class="pr__links"><a class="link-sm" href="https://github.com/mhandler1991/portfolio-website/issues/27" target="_blank" rel="noopener noreferrer">Issue #27 ↗</a><a class="link-sm" href="https://github.com/mhandler1991/portfolio-website/pull/28" target="_blank" rel="noopener noreferrer">PR #28 ↗</a></p>
+            </li>
+            <li class="card pr">
+              <span class="pr__num">#29 → PR #30</span>
+              <h3 class="pr__title">A fix after seeing it live</h3>
+              <p class="card__text">Once it was live, the replay link sat on its own row and left a gap. Moved inline after “in fintech.”, and the gap dropped from about 72px to 24px.</p>
+              <p class="pr__links"><a class="link-sm" href="https://github.com/mhandler1991/portfolio-website/issues/29" target="_blank" rel="noopener noreferrer">Issue #29 ↗</a><a class="link-sm" href="https://github.com/mhandler1991/portfolio-website/pull/30" target="_blank" rel="noopener noreferrer">PR #30 ↗</a></p>
+            </li>
+            <li class="card pr">
+              <span class="pr__num">#22 → PR #32</span>
+              <h3 class="pr__title">Staying in scope</h3>
+              <p class="card__text">Step 04 still said “/ship opens a PR,” left over from before /ship was retired. Fixed. A second mention elsewhere was outside the issue, so it was <mark>filed as #31 instead of changed quietly</mark>.</p>
+              <p class="pr__links"><a class="link-sm" href="https://github.com/mhandler1991/portfolio-website/issues/22" target="_blank" rel="noopener noreferrer">Issue #22 ↗</a><a class="link-sm" href="https://github.com/mhandler1991/portfolio-website/pull/32" target="_blank" rel="noopener noreferrer">PR #32 ↗</a></p>
+            </li>
+            <li class="card pr">
+              <span class="pr__num">#23 → PR #33</span>
+              <h3 class="pr__title">Measured, not guessed</h3>
+              <p class="card__text">The top bar mark didn’t fit at phone width. The commit records the numbers and what was rejected:</p>
+              <figure class="pr__commit"><figcaption>From the commit: </figcaption><blockquote>Measured at 375px: the row needed 330.6px of 315px … with the gaps it needs 310.6px and stays on one 60px row.</blockquote></figure>
+              <p class="pr__links"><a class="link-sm" href="https://github.com/mhandler1991/portfolio-website/issues/23" target="_blank" rel="noopener noreferrer">Issue #23 ↗</a><a class="link-sm" href="https://github.com/mhandler1991/portfolio-website/pull/33" target="_blank" rel="noopener noreferrer">PR #33 ↗</a></p>
+            </li>
+          </ul>
+          <p class="log-text log-text--m">Every commit body has the same two parts: what changed, and a “Decisions” paragraph with what was rejected and why. That’s the record I review before I merge.</p>
+          <p class="log-cta"><a class="btn btn--primary" href="https://github.com/mhandler1991/portfolio-website" target="_blank" rel="noopener noreferrer">See the repo on GitHub <span aria-hidden="true">↗</span></a></p>
+        </div>
+      </section>
+
+      <!-- 09 Calls I made -->
+      <section class="section wrap" id="calls" aria-labelledby="calls-title">
+        <div class="section__inner">
+          <h2 class="section-title" id="calls-title"><span class="section-title__num">09</span>Calls I made</h2>
+          <p class="log-intro">Plenty of good ideas didn’t make it. These are the ones that shaped the page.</p>
+          <!-- The Builds Worked/Didn't pattern -->
+          <div class="outcomes log-calls">
+            <div>
+              <h3 class="outcomes__label">+ Kept</h3>
+              <ul>
+                <li>Content before design, every time.</li>
+                <li>One hand-drawn mark per idea: an underline, a redaction, a circle, a highlighter, a margin note.</li>
+                <li>Red only means “new”: new words, current role, my mark. Strikes are graphite.</li>
+                <li>Every Build gets a “Didn’t” list. Admitting what failed reads as a person.</li>
+                <li>Claude is credited as a tool I used, not the builder.</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="outcomes__label outcomes__label--didnt">− Cut</h3>
+              <ul>
+                <li>Commit charts per project, then one combined chart. Numbers without a story.</li>
+                <li>A full-width black band for How I work. It broke the page.</li>
+                <li>A five-row index at the top of Builds.</li>
+                <li>A uniform button system. Reverted the same hour.</li>
+                <li>Funny Claude “reviews” of working with me.</li>
+                <li>A “Here now” line under my current role that I never asked for. Cut on sight.</li>
+              </ul>
+            </div>
+          </div>
+          <figure class="quote">
+            <blockquote>“Let’s remove the “Here now · since Apr 2024.” I don’t know where that came from. That was never agreed upon.”</blockquote>
+            <figcaption class="label">Me, on v15</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- 10 Two details -->
+      <section class="section wrap" id="details" aria-labelledby="details-title">
+        <div class="section__inner">
+          <h2 class="section-title" id="details-title"><span class="section-title__num">10</span>Two details</h2>
+          <h3 class="label log-label">The mark</h3>
+          <div class="mark-demo">
+            <div class="mark-demo__tile"><svg class="mark-demo__svg" viewBox="5.5 5 21.5 22" aria-hidden="true" focusable="false"><path class="topbar__mark-letter" d="M9.21 20.5V7.5H12.41L16 17.57L19.59 7.5H22.79V20.5H20.41V11.53L17.14 20.48H14.86L11.59 11.53V20.5Z"/><path class="topbar__mark-line" d="M7 25.2 C 12 23.8, 18 24.8, 25.5 23.6" fill="none" stroke-width="2.4" stroke-linecap="round"/></svg></div>
+            <ol class="labeled labeled--closed mark-demo__list">
+              <li class="labeled__row"><span class="labeled__key labeled__key--version">Letter</span><span class="labeled__val">The M is Geist SemiBold, the same face as my name and headings, traced from the font file into a shape so it renders the same in every browser.</span></li>
+              <li class="labeled__row"><span class="labeled__key labeled__key--version">Mark</span><span class="labeled__val">The red pencil underline from the homepage thesis, so the mark and the page share one gesture.</span></li>
+              <li class="labeled__row"><span class="labeled__key labeled__key--version">16px</span><span class="labeled__val">The underline is drawn thicker in the smallest favicon so it doesn’t disappear in a browser tab.</span></li>
+            </ol>
+          </div>
+          <h3 class="label log-label">The intro line</h3>
+          <div class="edit-demo">
+            <!-- The homepage lede's finished state, static. Screen readers get the plain sentence. -->
+            <p class="edit-demo__line">
+              <span class="sr-only">Product manager and builder in San Diego. I build prototypes and ship them with Claude. I run a technical product team in fintech.</span>
+              <span aria-hidden="true">Product manager <span class="edit-demo__hand">&amp; builder</span> in San Diego. I <span class="intro__strike">write PRDs<svg class="intro__strike-line" viewBox="0 0 100 10" preserveAspectRatio="none" focusable="false"><path pathLength="1" d="M1 6 C 28 3.8, 62 6.6, 99 4.2"/></svg></span> <span class="edit-demo__hand intro__hl">build prototypes</span> and <span class="intro__strike">hand them off<svg class="intro__strike-line" viewBox="0 0 100 10" preserveAspectRatio="none" focusable="false"><path pathLength="1" d="M1 6 C 28 3.8, 62 6.6, 99 4.2"/></svg></span> <span class="edit-demo__hand">ship them with Claude</span>. I run a technical product team in fintech.</span>
+            </p>
+          </div>
+          <p class="log-text log-text--m">The intro plays once when you land: the old way of doing product gets struck through and rewritten, one edit at a time. That was the idea the whole site grew toward: a working sheet I’m still marking up.</p>
+        </div>
+      </section>
+
+      <!-- 11 Still editing -->
+      <section class="section wrap" id="still-editing" aria-labelledby="still-editing-title">
+        <div class="section__inner">
+          <h2 class="section-title" id="still-editing-title"><span class="section-title__num">11</span>Still editing</h2>
+          <p class="log-intro">This page, like the rest of the site, is a working sheet. Some edits are done. Some aren’t yet.</p>
+          <figure class="quote">
+            <blockquote>“The idea of the site is that I’m making edits to a working sheet, and that I’m part of the change in product from people who write documents to people who build.”</blockquote>
+            <figcaption class="label">Me, Nov 15</figcaption>
+          </figure>
+          <div class="still">
+            <div>
+              <!-- Evergreen on purpose: specific work lives in GitHub issues (README "Keeping the build log true") -->
+              <h3 class="label still__label">Open edits</h3>
+              <ul class="todo">
+                <li class="todo__item todo__item--done"><svg class="todo__box" viewBox="0 0 18 18" aria-hidden="true" focusable="false"><rect x="1.5" y="1.5" width="15" height="15" rx="3" stroke-width="1.5"/><path class="todo__check" d="M4.5 9.5 L 8 13 L 14 5" stroke-width="2"/></svg><span><span class="sr-only">Done: </span><span class="intro__strike">Pick a direction that doesn’t look generated<svg class="intro__strike-line" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path pathLength="1" d="M1 6 C 28 3.8, 62 6.6, 99 4.2"/></svg></span></span></li>
+                <li class="todo__item todo__item--done"><svg class="todo__box" viewBox="0 0 18 18" aria-hidden="true" focusable="false"><rect x="1.5" y="1.5" width="15" height="15" rx="3" stroke-width="1.5"/><path class="todo__check" d="M4.5 9.5 L 8 13 L 14 5" stroke-width="2"/></svg><span><span class="sr-only">Done: </span><span class="intro__strike">Write every word before designing anything<svg class="intro__strike-line" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path pathLength="1" d="M1 6 C 28 3.8, 62 6.6, 99 4.2"/></svg></span></span></li>
+                <li class="todo__item todo__item--done"><svg class="todo__box" viewBox="0 0 18 18" aria-hidden="true" focusable="false"><rect x="1.5" y="1.5" width="15" height="15" rx="3" stroke-width="1.5"/><path class="todo__check" d="M4.5 9.5 L 8 13 L 14 5" stroke-width="2"/></svg><span><span class="sr-only">Done: </span><span class="intro__strike">A favicon and a mark<svg class="intro__strike-line" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path pathLength="1" d="M1 6 C 28 3.8, 62 6.6, 99 4.2"/></svg></span></span></li>
+                <li class="todo__item todo__item--done"><svg class="todo__box" viewBox="0 0 18 18" aria-hidden="true" focusable="false"><rect x="1.5" y="1.5" width="15" height="15" rx="3" stroke-width="1.5"/><path class="todo__check" d="M4.5 9.5 L 8 13 L 14 5" stroke-width="2"/></svg><span><span class="sr-only">Done: </span><span class="intro__strike">An intro line that edits itself<svg class="intro__strike-line" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path pathLength="1" d="M1 6 C 28 3.8, 62 6.6, 99 4.2"/></svg></span></span></li>
+                <li class="todo__item todo__item--done"><svg class="todo__box" viewBox="0 0 18 18" aria-hidden="true" focusable="false"><rect x="1.5" y="1.5" width="15" height="15" rx="3" stroke-width="1.5"/><path class="todo__check" d="M4.5 9.5 L 8 13 L 14 5" stroke-width="2"/></svg><span><span class="sr-only">Done: </span><span class="intro__strike">This page<svg class="intro__strike-line" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path pathLength="1" d="M1 6 C 28 3.8, 62 6.6, 99 4.2"/></svg></span></span></li>
+                <li class="todo__item"><svg class="todo__box" viewBox="0 0 18 18" aria-hidden="true" focusable="false"><rect x="1.5" y="1.5" width="15" height="15" rx="3" stroke-width="1.5"/></svg><span><span class="sr-only">To do: </span>Add new builds as they ship</span></li>
+                <li class="todo__item"><svg class="todo__box" viewBox="0 0 18 18" aria-hidden="true" focusable="false"><rect x="1.5" y="1.5" width="15" height="15" rx="3" stroke-width="1.5"/></svg><span><span class="sr-only">To do: </span>Update what’s here as the work changes</span></li>
+                <li class="todo__item"><svg class="todo__box" viewBox="0 0 18 18" aria-hidden="true" focusable="false"><rect x="1.5" y="1.5" width="15" height="15" rx="3" stroke-width="1.5"/></svg><span><span class="sr-only">To do: </span>Track what’s next in the repo’s <a href="https://github.com/mhandler1991/portfolio-website/issues" target="_blank" rel="noopener noreferrer">open issues ↗</a></span></li>
+              </ul>
+            </div>
+            <div class="still__end">
+              <div class="journey-more still__more">
+                <svg class="journey-more__arrow" aria-hidden="true" focusable="false" viewBox="0 0 40 120" preserveAspectRatio="none"><path d="M20 120 C 19 82, 21 40, 20 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M20 4 L 12 16 M20 4 L 28 15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                <div class="journey-more__text">
+                  <p class="journey-more__title">Still learning…</p>
+                  <p class="journey-more__title">Still building…</p>
+                </div>
+              </div>
+              <p class="still__close">The site isn’t finished. It’s the newest version of something I keep editing, which was <span class="pencil-under">more or less the point<svg class="pencil-under__line" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M1 6 C 25 3.5, 60 7, 99 4"/></svg></span>.</p>
+              <p class="label">Last edited Nov 15, 2026</p>
+              <a class="btn btn--primary still__back" href="/">← Back to the homepage</a>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- Footer: the homepage's -->
