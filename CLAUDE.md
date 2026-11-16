@@ -110,6 +110,10 @@ No automated tests by design (R15). The checks are:
 
 **Verifications must be able to fail.** Before trusting a check, confirm its unfixed case would fail it.
 
+**Tooling traps that have recurred** (audit log #15):
+- **File lists in zsh.** zsh doesn't word-split an unquoted variable, so `F="a b"; grep … $F` passes one path and scans nothing. Write the files out, use an array (`"${F[@]}"`) or loop over them, and count each file inside the loop that reads it, never from the length of the list. Cycles #18, #28 and #40; recurred in #42.
+- **Screenshot slices.** On macOS, `sips --cropOffset` ignores the offset and returns the same region for every slice. Clip at capture time instead: an iframe scrolled to the target, or the `clip` option of Chrome's `Page.captureScreenshot`. Cycle #41; recurred in #42.
+
 ---
 
 ## 9. Git workflow
