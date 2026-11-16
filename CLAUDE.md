@@ -113,6 +113,8 @@ No automated tests by design (R15). The checks are:
 **Tooling traps that have recurred** (audit log #15):
 - **File lists in zsh.** zsh doesn't word-split an unquoted variable, so `F="a b"; grep … $F` passes one path and scans nothing. Write the files out, use an array (`"${F[@]}"`) or loop over them, and count each file inside the loop that reads it, never from the length of the list. Cycles #18, #28 and #40; recurred in #42.
 - **Screenshot slices.** On macOS, `sips --cropOffset` ignores the offset and returns the same region for every slice. Clip at capture time instead: an iframe scrolled to the target, or the `clip` option of Chrome's `Page.captureScreenshot`. Cycle #41; recurred in #42.
+- **Phone-width screenshots.** Headless Chrome won’t lay a page out narrower than its minimum window width, so `--window-size=375,…` renders a wider layout and crops it to 375. The image looks plausible but tests the wrong breakpoint. Load the page in an iframe of the exact width inside a wider window, and report `scrollWidth` against `clientWidth` from inside it. Cycle #32; recurred in #47.
+- **Scrolling to a target before a capture.** The site sets `html { scroll-behavior: smooth; }`, so a scripted scroll or an anchor jump can be caught mid-scroll and the capture comes out blank. Set `scroll-behavior: auto` on the framed document (or pass `behavior: 'instant'`) before `scrollTo`, and don’t rely on a `#fragment` URL with `--screenshot`. Cycle #34; recurred in #47.
 
 ---
 
